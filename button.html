@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Ideas, Our Expertise</title>
+</head>
+<style>
+  * {
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121212;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    height: 90px;
+  }
+
+  .logo {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #ff3c3c;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background-color: #121212;
+      flex-direction: column;
+      width: 100%;
+      text-align: right;
+      padding: 20px 40px;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+
+  .slider {
+    background: linear-gradient(to bottom, #000000, #e60000);
+    padding: 60px 20px;
+    overflow: hidden;
+  }
+
+  .slider-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+  }
+
+  .slider-container::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar on webkit browsers */
+  }
+
+  .slide {
+    min-width: 300px;
+    max-width: 300px;
+    background: #262626;
+    border-radius: 12px;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .slide:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .slide h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .slide p {
+    font-size: 14px;
+    color: #cccccc;
+  }
+
+  .slider-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .slider-buttons button {
+    background-color: #333;
+    border: none;
+    color: #fff;
+    padding: 12px 18px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .slider-buttons button:hover {
+    background-color: #555;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>
+<link rel="icon" href="logo-color (2).png">
+
+<body>
+  <div
+    style="position:fixed; z-index:-1; top:0; left:0; width:100%; height:100%;  background: linear-gradient(to bottom, #000000, #e60000); opacity:0.3;">
+  </div>
+  <!-- Header -->
+  <nav style="background-color: black; padding-top: 0%;">
+    <div class="logo" style="display: flex;">
+      <img src="logo-color (2).png" alt="" height="70" width="90">
+      <p>Your</p>
+      <p>Ideas,</p>
+      <p>Our</p>
+      <p>Expertise
+      </p>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks" style="padding-right: 1%;">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="button.html"
+          style="padding: 10px 20px; background: #e60000; color:  #ffffff; text-decoration: none; border-radius: 6px;">Get
+          Started</a></li>
+    </ul>
+  </nav>
+  </div>
+  <section class="slider">
+    <div style="max-width: 1100px; margin: auto; text-align: center;">
+      <h2 style="font-size: 36px; color: #ffffff; margin-bottom: 10px;">Our Services</h2>
+      <p style="font-size: 18px; color: #ffffff; margin-bottom: 40px;">
+        We provide innovative IT services tailored to your business needs.
+      </p>
+      <div class="slider-container" id="slider">
+        <div class="slide">
+          <a href="webdev.html">
+            <h3>Web Development</h3>
+            <p>Develop responsive websites and admin panels using modern tech like React and Rust.</p>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="gamedev.html">
+            <h3>Game Development</h3>
+            <p>Create immersive 2D, 3D, and multiplayer games using Unity and cutting-edge tools.</p>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="AiMl.html">
+            <h3>AI & Machine Learning</h3>
+            <p>Build intelligent systems like recommendation engines, chatbots, and vision models.</p>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="UIUX.html">
+            <h3>UI/UX & Graphic Design</h3>
+            <p>Craft engaging user interfaces, branding assets, and interactive app/game designs.</p>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="mobile.html">
+            <h3>Mobile Apps Development</h3>
+            <p>Design cross-platform mobile apps with seamless UI and Firebase backend integration.</p>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="cloud.html">
+            <h3>Cloud Solutions</h3>
+            <p>Set up and manage cloud services with Firebase, AWS, or Azure for scalability.</p>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="data.html">
+            <h3>Data Analytics & BI</h3>
+            <p>Analyze data and visualize insights using tools like Power BI and Python.</p>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="webscrap.html">
+            <h3>Web Scraping & Automation</h3>
+            <p>Automate data collection and repetitive tasks with custom scraping and bot solutions.</p>
+          </a>
+        </div>
+      </div>
+      <div class="slider-buttons">
+        <button onclick="prevSlide()">❮</button>
+        <button onclick="nextSlide()">❯</button>
+      </div>
+    </div>
+  </section>
+  <footer style="background-color: #111; color: #fff; padding: 60px 40px; font-family: 'Segoe UI', sans-serif;">
+    <div
+      style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px;">
+
+      <!-- Branding -->
+      <div style="flex: 1 1 300px;">
+        <h2 style="color: #e60000; font-size: 28px; margin-bottom: 10px;">Your Ideas, Our Expertise.</h2>
+        <p style="color: #ccc;">Empowering businesses with next-gen technology. We innovate. We deliver. We
+          grow—together.</p>
+        <div style="margin-top: 20px;">
+          <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
+            style="color:#fff; margin-right: 15px;"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
+          <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div style="flex: 1 1 150px;">
+        <h4 style="margin-bottom: 15px;">Quick Links</h4>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+          <li><a href="about.html" style="color: #ccc; text-decoration: none;">About</a></li>
+          <li><a href="services.html" style="color: #ccc; text-decoration: none;">Services</a></li>
+          <li><a href="portfolio.html" style="color: #ccc; text-decoration: none;">Projects</a></li>
+          <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div style="flex: 1 1 250px;">
+        <h4 style="margin-bottom: 15px;">Contact</h4>
+        <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-envelope" style="color:#e60000;"></i>
+          netbryx@gmail.com
+        </p>
+        <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
+          style="text-decoration: none; color:  #ccc;">
+          <p style="color: #ccc; margin: 8px 0;"><i class="fab fa-linkedin" style="color:#e60000;"></i>
+            https://pk.linkedin.com/company
+            <br>/netbryx?trk=public_jobs_top<br>card-org-name
+          </p>
+        </a>
+        <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-phone" style="color:#e60000;"></i>
+          +92-3172442900</p>
+        <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-map-marker-alt" style="color:#e60000;"></i>
+          Pakistan.
+        </p>
+      </div>
+      <!-- Newsletter -->
+      <div style="flex: 1 1 250px;">
+        <h4 style="margin-bottom: 15px;">Newsletter</h4>
+        <form onsubmit="subscribe(event)">
+          <input type="email" placeholder="Your email" required
+            style="padding:10px; width:100%; border-radius:5px; border:none; margin-bottom:10px;">
+          <button type="submit"
+            style="background-color: #e60000; border: none; color: white; padding: 10px 20px; border-radius: 5px; width:100%;">
+            Subscribe
+          </button>
+        </form>
+        <p id="subscribe-msg" style="color:lightgreen; display:none; margin-top:10px;">Subscribed successfully!
+        </p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px; color: #666;">
+      &copy; 2025 NetBryx. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+    const slider = document.getElementById('slider');
+
+    function nextSlide() {
+      slider.scrollBy({ left: 320, behavior: 'smooth' });
+    }
+
+    function prevSlide() {
+      slider.scrollBy({ left: -320, behavior: 'smooth' });
+    }
+  </script>
+</body>
+
+</html>

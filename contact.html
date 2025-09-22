@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ideas, Our Expertise</title>
+</head>
+<style>
+    * {
+        padding: 0%;
+        margin: 0%;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        height: 100px;
+        padding: 0 40px;
+        border-bottom: 2px solid rgba(230, 0, 0, 0.3);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+    }
+
+    .logo img {
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+        transform: scale(1.05);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 35px;
+        list-style: none;
+        align-items: center;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 500;
+        padding: 12px 24px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-links a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(230, 0, 0, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .nav-links a:hover::before {
+        left: 100%;
+    }
+
+    .nav-links a:hover {
+        color: #ff3c3c;
+        background: rgba(230, 0, 0, 0.1);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(230, 0, 0, 0.2);
+    }
+
+    .nav-links .cta-button {
+        background: linear-gradient(45deg, #e60000, #ff3c3c);
+        color: white;
+        font-weight: 600;
+        border-radius: 25px;
+        padding: 12px 30px;
+        box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
+    }
+
+    .nav-links .cta-button:hover {
+        background: linear-gradient(45deg, #ff3c3c, #e60000);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+        color: #e60000;
+        background: rgba(230, 0, 0, 0.1);
+    }
+
+    @media (max-width: 992px) {
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100px;
+            right: 0;
+            background-color: #121212;
+            flex-direction: column;
+            width: 100%;
+            text-align: right;
+            padding: 20px 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-links.active {
+            display: flex;
+            animation: fadeIn 0.25s ease-in-out;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        nav {
+            height: 80px;
+            padding: 0 20px;
+        }
+
+        .nav-links {
+            top: 80px;
+        }
+    }
+</style>
+<link rel="icon" href="logo-color (2).png">
+
+<body>
+    <div id="bg"
+        style="position:fixed; z-index:-2; top:0; left:0; width:100%; height:100%; background:url('videogamer-winning-first-person-shooter-tournament-using-rgb-keyboard-professional-headphones-pro-player-man-talking-with-other-players-online-game-competition-powerful-computer\ \(1\).jpg') center/cover no-repeat;">
+    </div>
+    <div
+        style="position:fixed; z-index:-1; top:0; left:0; width:100%; height:100%;  background: linear-gradient(to bottom, #000000, #e60000); opacity:0.3;">
+    </div>
+    <!-- Header -->
+    <nav>
+        <div class="logo">
+            <img src="logo-color (2).png" alt="NetBryx Logo" height="70" width="90">
+            <p>Your</p>
+            <p>Ideas,</p>
+            <p>Our</p>
+            <p>Expertise</p>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="button.html" class="cta-button">Get Started</a></li>
+        </ul>
+    </nav>
+    <!-- Contact Section -->
+    <section id="contact" style="padding:60px 20px; text-align:center;">
+        <h2 style="font-size:2rem; color: white;">📧 Contact Us</h2>
+        <form onsubmit="return sendForm()" style="max-width:500px; margin:auto; text-align:left;">
+            <input type="text" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0;">
+            <input type="email" placeholder="Your Email" required style="width:100%; padding:10px; margin:10px 0;">
+            <textarea placeholder="Your Message" required style="width:100%; padding:10px; margin:10px 0;"></textarea>
+            <button type="submit"
+                style="padding:10px 20px; background:red; color:white; border:none; align-content: center;">Send</button>
+        </form>
+    </section>
+    <footer style="background-color: #111; color: #fff; padding: 60px 40px; font-family: 'Segoe UI', sans-serif;">
+        <div
+            style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px;">
+
+            <!-- Branding -->
+            <div style="flex: 1 1 300px;">
+                <h2 style="color: #e60000; font-size: 28px; margin-bottom: 10px;">Your Ideas, Our Expertise.</h2>
+                <p style="color: #ccc;">Empowering businesses with next-gen technology. We innovate. We deliver. We
+                    grow—together.</p>
+                <div style="margin-top: 20px;">
+                    <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
+                        style="color:#fff; margin-right: 15px;"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div style="flex: 1 1 150px;">
+                <h4 style="margin-bottom: 15px;">Quick Links</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <li><a href="index.html" style="color: #ccc; text-decoration: none;">Home</a></a></li>
+                    <li><a href="about.html" style="color: #ccc; text-decoration: none;">About</a></li>
+                    <li><a href="services.html" style="color: #ccc; text-decoration: none;">Services</a></li>
+                    <li><a href="portfolio.html" style="color: #ccc; text-decoration: none;">Projects</a></li>
+                    <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="flex: 1 1 250px;">
+                <h4 style="margin-bottom: 15px;">Contact</h4>
+                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-envelope" style="color:#e60000;"></i>
+                    netbryx@gmail.com
+                </p>
+                <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
+                    style="text-decoration: none; color:  #ccc;">
+                    <p style="color: #ccc; margin: 8px 0;"><i class="fab fa-linkedin" style="color:#e60000;"></i>
+                        https://pk.linkedin.com/company
+                        <br>/netbryx?trk=public_jobs_top<br>card-org-name
+                    </p>
+                </a>
+                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-phone" style="color:#e60000;"></i>
+                    +92-3172442900</p>
+                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-map-marker-alt" style="color:#e60000;"></i>
+                    Pakistan.
+                </p>
+            </div>
+            <!-- Newsletter -->
+            <div style="flex: 1 1 250px;">
+                <h4 style="margin-bottom: 15px;">Newsletter</h4>
+                <form onsubmit="subscribe(event)">
+                    <input type="email" placeholder="Your email" required
+                        style="padding:10px; width:100%; border-radius:5px; border:none; margin-bottom:10px;">
+                    <button type="submit"
+                        style="background-color: #e60000; border: none; color: white; padding: 10px 20px; border-radius: 5px; width:100%;">
+                        Subscribe
+                    </button>
+                </form>
+                <p id="subscribe-msg" style="color:lightgreen; display:none; margin-top:10px;">Subscribed successfully!
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; color: #666;">
+            &copy; 2025 NetBryx. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>

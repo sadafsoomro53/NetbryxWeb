@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ideas, Our Expertise</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #121212;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            height: 90px;
+        }
+
+        .logo {
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff3c3c;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: #121212;
+                flex-direction: column;
+                width: 100%;
+                text-align: right;
+                padding: 20px 40px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .main-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .main-container {
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.2);
+        }
+
+        .service-card h2 {
+            margin-bottom: 15px;
+            color: #ff4d4d;
+            font-size: 22px;
+        }
+
+        .service-card p {
+            color: #ccc;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .contact-section {
+            flex: 1;
+            background-color: #111;
+            border-radius: 12px;
+            padding: 30px;
+            height: fit-content;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
+            padding-right: 5%;
+        }
+
+        .contact-section h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ff4d4d;
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            background-color: #ffffff;
+            color: white;
+        }
+
+        .contact-section button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #ff4d4d;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-section button:hover {
+            background-color: #e60000;
+        }
+
+        @media (max-width: 992px) {
+            .main-wrapper {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+
+            .contact-section {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<link rel="icon" href="logo-color (2).png">
+
+<body>
+    <div
+        style="position:fixed; z-index:-1; top:0; left:0; width:100%; height:100%;  background: linear-gradient(to bottom, #000000, #e60000);">
+    </div>
+    <!-- Header -->
+    <nav style="background-color: black; padding-top: 0%;">
+        <div class="logo" style="display: flex; color: white;">
+            <img src="logo-color (2).png" alt="" height="70" width="90">
+            <p>Your</p>
+            <p>Ideas,</p>
+            <p>Our</p>
+            <p>Expertise</p>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks" style="padding-right: 1%;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="button.html"
+                    style="padding: 10px 20px; background: #e60000; color:  #ffffff; text-decoration: none; border-radius: 6px;">Get
+                    Started</a></li>
+        </ul>
+    </nav>
+    <div style="color: white; padding-left: 4%;">
+        <h1>AI & Machine Learning</h1>
+        <p style="color: rgb(188, 188, 188); padding-top: 2%;">Artificial Intelligence (AI) is the science of making
+            machines smart enough to perform tasks that usually require <br>
+            human intelligence. Machine Learning (ML) is a subset of AI that enables machines to learn from data and
+            improve <br>
+            automatically without being explicitly programmed.
+        </p>
+    </div>
+    <div class="main-wrapper">
+        <!-- Services Section -->
+        <section class="main-container">
+            <div class="service-card">
+                <h2>Machine Learning & Predictive Analytics</h2>
+                <p>Develop smart models that analyze data, find patterns, and make predictions. Ideal for business
+                    forecasting, automation, and insights.</p>
+            </div>
+            <div class="service-card">
+                <h2>Natural Language & Chatbot Solutions</h2>
+                <p>Build AI systems that understand and respond to human language. Includes chatbots, sentiment
+                    analysis, and text processing.</p>
+            </div>
+            <div class="service-card">
+                <h2>Computer Vision & Image Intelligence</h2>
+                <p>Enable machines to see, detect, and interpret visual content. Use cases include face recognition,
+                    object detection, and OCR.</p>
+            </div>
+            <div class="service-card">
+                <h2>Generative AI & Content Automation</h2>
+                <p>Create intelligent content using advanced AI models. Useful for auto-writing, art generation, and
+                    personalized marketing.</p>
+            </div>
+        </section>
+
+        <!-- Get Connected Section -->
+        <aside class="contact-section">
+            <h2>📩 Get Connected with Us</h2>
+            <form onsubmit="submitForm(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" style="background-color: #e60000;">Send Message</button>
+            </form>
+        </aside>
+    </div>
+    <footer style="background-color: #111; color: #fff; padding: 60px 40px; font-family: 'Segoe UI', sans-serif;">
+        <div
+            style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px;">
+            <!-- Branding -->
+            <div style="flex: 1 1 300px;">
+                <h2 style="color: #e60000; font-size: 28px; margin-bottom: 10px;">Your Ideas, Our Expertise.</h2>
+                <p style="color: #ccc;">Empowering businesses with next-gen technology. We innovate. We deliver. We
+                    grow—together.</p>
+                <div style="margin-top: 20px;">
+                    <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
+                        style="color:#fff; margin-right: 15px;"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div style="flex: 1 1 150px;">
+                <h4 style="margin-bottom: 15px;">Quick Links</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <li><a href="about.html" style="color: #ccc; text-decoration: none;">About</a></li>
+                    <li><a href="services.html" style="color: #ccc; text-decoration: none;">Services</a></li>
+                    <li><a href="portfolio.html" style="color: #ccc; text-decoration: none;">Projects</a></li>
+                    <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="flex: 1 1 250px;">
+                <h4 style="margin-bottom: 15px;">Contact</h4>
+                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-envelope" style="color:#e60000;"></i>
+                    netbryx@gmail.com
+                </p>
+                <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
+                    style="text-decoration: none; color:  #ccc;">
+                    <p style="color: #ccc; margin: 8px 0;"><i class="fab fa-linkedin" style="color:#e60000;"></i>
+                        https://pk.linkedin.com/company
+                        <br>/netbryx?trk=public_jobs_top<br>card-org-name
+                    </p>
+                </a>
+                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-phone" style="color:#e60000;"></i>
+                    +92-3172442900</p>
+                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-map-marker-alt" style="color:#e60000;"></i>
+                    Pakistan.
+                </p>
+            </div>
+            <!-- Newsletter -->
+            <div style="flex: 1 1 250px;">
+                <h4 style="margin-bottom: 15px;">Newsletter</h4>
+                <form onsubmit="subscribe(event)">
+                    <input type="email" placeholder="Your email" required
+                        style="padding:10px; width:100%; border-radius:5px; border:none; margin-bottom:10px;">
+                    <button type="submit"
+                        style="background-color: #e60000; border: none; color: white; padding: 10px 20px; border-radius: 5px; width:100%;">
+                        Subscribe
+                    </button>
+                </form>
+                <p id="subscribe-msg" style="color:lightgreen; display:none; margin-top:10px;">Subscribed successfully!
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; color: #666;">
+            &copy; 2025 NetBryx. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            alert("Thank you! We’ll get back to you shortly.");
+        }
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+        function handleScrollAnimations(selector) {
+            document.querySelectorAll(selector).forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
