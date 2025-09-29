@@ -168,19 +168,89 @@
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.6s ease;
-    flex: 1 1 250px;
-    background: #000000;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    flex: 1 1 280px;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    margin: 15px;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(230, 0, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .service-card:hover::before {
+    left: 100%;
+  }
+
+  .service-card .service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #e60000, #ff3c3c);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
   }
 
   .service-card h3 {
-    color: #e60000;
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
   }
 
   .service-card p {
-    color: #e1e1e1;
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  .service-card .service-features {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(230, 0, 0, 0.2);
+  }
+
+  .service-card .service-features ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .service-card .service-features li {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .service-card .service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #e60000;
+    font-weight: bold;
   }
 
   .service-card.visible {
@@ -189,23 +259,20 @@
   }
 
   .service-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border: 5px solid black;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(230, 0, 0, 0.2);
+    border-color: #e60000;
+    background: linear-gradient(135deg, #2a2a2a, #3a2a2a);
+  }
+
+  body {
+    background-color: #0f0f0f;
+    color: white;
   }
 </style>
 <link rel="icon" href="logo-color (2).png">
 
 <body>
-  <div id="bg"
-    style="position:fixed; z-index:-2; top:0; left:0; width:100%; height:100%; background:url('videogamer-winning-first-person-shooter-tournament-using-rgb-keyboard-professional-headphones-pro-player-man-talking-with-other-players-online-game-competition-powerful-computer\ \(1\).jpg') center/cover no-repeat;">
-  </div>
-  <div
-    style="position:fixed; z-index:-1; top:0; left:0; width:100%; height:100%;  background: linear-gradient(to bottom, #000000, #e60000); opacity:0.3;">
-  </div>
   <!-- Header -->
   <nav>
     <div class="logo">
@@ -225,9 +292,6 @@
       <li><a href="button.html" class="cta-button">Get Started</a></li>
     </ul>
   </nav>
-  <section
-    style="padding: 80px 40px; background: linear-gradient(to bottom, #000000, #e60000); font-family: sans-serif; position:fixed; z-index:-2; top:0; left:0; width:100%; height:100%; background:url('videogamer-winning-first-person-shooter-tournament-using-rgb-keyboard-professional-headphones-pro-player-man-talking-with-other-players-online-game-competition-powerful-computer\ \(1\).jpg') center/cover no-repeat;">
-  </section>
   <div style="max-width: 1100px; margin: auto; text-align: center; padding-top: 10%;">
     <h2 style="font-size: 36px; color: #ffffff; margin-bottom: 10px;">Our Services</h2>
     <p style="font-size: 18px; color: #ffffff; margin-bottom: 40px;">
@@ -236,36 +300,100 @@
     <div id="services"
       style="padding-bottom: 5%; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px;">
       <div class="service-card">
+        <div class="service-icon">🌐</div>
         <h3>Web Development</h3>
         <p>Develop responsive websites and admin panels using modern tech like React and Rust.</p>
+        <div class="service-features">
+          <ul>
+            <li>Responsive Design</li>
+            <li>Modern Frameworks</li>
+            <li>Admin Panels</li>
+          </ul>
+        </div>
       </div>
       <div class="service-card">
+        <div class="service-icon">🎮</div>
         <h3>Game Development</h3>
         <p>Create immersive 2D, 3D, and multiplayer games using Unity and cutting-edge tools.</p>
+        <div class="service-features">
+          <ul>
+            <li>2D/3D Games</li>
+            <li>Unity Development</li>
+            <li>Multiplayer Support</li>
+          </ul>
+        </div>
       </div>
       <div class="service-card">
+        <div class="service-icon">🤖</div>
         <h3>AI & Machine Learning</h3>
         <p>Build intelligent systems like recommendation engines, chatbots, and vision models.</p>
+        <div class="service-features">
+          <ul>
+            <li>Chatbots</li>
+            <li>Vision Models</li>
+            <li>Data Analysis</li>
+          </ul>
+        </div>
       </div>
       <div class="service-card">
+        <div class="service-icon">🎨</div>
         <h3>UI/UX & Graphic Design</h3>
         <p>Craft engaging user interfaces, branding assets, and interactive app/game designs.</p>
+        <div class="service-features">
+          <ul>
+            <li>User Interfaces</li>
+            <li>Branding Assets</li>
+            <li>Interactive Design</li>
+          </ul>
+        </div>
       </div>
       <div class="service-card">
+        <div class="service-icon">📱</div>
         <h3>Mobile Apps Development</h3>
         <p>Design cross-platform mobile apps with seamless UI and Firebase backend integration.</p>
+        <div class="service-features">
+          <ul>
+            <li>Cross-platform</li>
+            <li>Firebase Backend</li>
+            <li>Seamless UI</li>
+          </ul>
+        </div>
       </div>
       <div class="service-card">
+        <div class="service-icon">☁️</div>
         <h3>Cloud Solutions</h3>
         <p>Set up and manage cloud services with Firebase, AWS, or Azure for scalability.</p>
+        <div class="service-features">
+          <ul>
+            <li>AWS/Azure Setup</li>
+            <li>Scalable Solutions</li>
+            <li>Cloud Management</li>
+          </ul>
+        </div>
       </div>
       <div class="service-card">
+        <div class="service-icon">📊</div>
         <h3>Data Analytics & BI</h3>
         <p>Analyze data and visualize insights using tools like Power BI and Python.</p>
+        <div class="service-features">
+          <ul>
+            <li>Power BI</li>
+            <li>Python Analytics</li>
+            <li>Data Visualization</li>
+          </ul>
+        </div>
       </div>
       <div class="service-card">
+        <div class="service-icon">🔧</div>
         <h3>Web Scraping & Automation</h3>
         <p>Automate data collection and repetitive tasks with custom scraping and bot solutions.</p>
+        <div class="service-features">
+          <ul>
+            <li>Data Collection</li>
+            <li>Task Automation</li>
+            <li>Custom Bots</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

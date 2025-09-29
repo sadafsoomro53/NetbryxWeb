@@ -163,16 +163,87 @@
             top: 80px;
         }
     }
+
+    body {
+        background-color: #0f0f0f;
+        color: white;
+    }
+
+    .about-section {
+        background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        padding: 80px 40px;
+        border-radius: 15px;
+        margin: 40px auto;
+        max-width: 1200px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(230, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(230, 0, 0, 0.1), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .about-section:hover::before {
+        opacity: 1;
+    }
+
+    .about-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(230, 0, 0, 0.2);
+        border-color: #e60000;
+    }
+
+    .about-content {
+        text-align: center;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+    }
+
+    .about-content.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .about-content h2 {
+        font-size: 3rem;
+        background: linear-gradient(45deg, #ffffff, #e60000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .about-content .divider {
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(45deg, #e60000, #ff3c3c);
+        margin: 0 auto 30px;
+        border-radius: 2px;
+    }
+
+    .about-content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #e0e0e0;
+        max-width: 900px;
+        margin: 0 auto;
+    }
 </style>
 <link rel="icon" href="logo-color (2).png">
 
 <body>
-    <div id="bg"
-        style="position:fixed; z-index:-2; top:0; left:0; width:100%; height:100%; background:url('videogamer-winning-first-person-shooter-tournament-using-rgb-keyboard-professional-headphones-pro-player-man-talking-with-other-players-online-game-competition-powerful-computer\ \(1\).jpg') center/cover no-repeat;">
-    </div>
-    <div
-        style="position:fixed; z-index:-1; top:0; left:0; width:100%; height:100%;  background: linear-gradient(to bottom, #000000, #e60000); opacity:0.3;">
-    </div>
     <!-- Header -->
     <nav>
         <div class="logo">
@@ -192,23 +263,19 @@
             <li><a href="button.html" class="cta-button">Get Started</a></li>
         </ul>
     </nav>
-    <section id="about"
-        style="padding: 80px 40px; background-color: #f7f7f7; font-family: sans-serif; background: linear-gradient(to top, #000000, #e60000);  position:fixed; z-index:-2; top:0; left:0; width:100%; height:100%; background:url('videogamer-winning-first-person-shooter-tournament-using-rgb-keyboard-professional-headphones-pro-player-man-talking-with-other-players-online-game-competition-powerful-computer\ \(1\).jpg') center/cover no-repeat;">
-    </section>
-    <div class="about-content"
-        style="padding: 10%; max-width: 1100px; margin: auto; text-align: center; opacity: 0; transform: translateY(50px); transition: all 0.8s ease;">
-        <h2 style="font-size: 36px; color: #ffffff; margin-bottom: 20px;">Who We Are</h2>
-        <p style="font-size: 18px; color: #ffffff; max-width: 800px; margin: 0 auto;">
-            At <strong>**NetBryx**</strong>, we believe great innovation starts with a simple idea — yours. With a
-            passionate team of developers, designers, and tech experts, we transform your concepts into high-impact
-            digital
-            solutions. From game development to AI, web, and mobile apps, we bring your vision to life with precision
-            and
-            creativity.
-            <strong>**Your Ideas, Our Expertise — that’s the NetBryx way.**</strong>
-        </p>
-    </div>
-    </section>
+    <div class="about-section">
+        <div class="about-content">
+            <h2>Who We Are</h2>
+            <div class="divider"></div>
+            <p>
+                At <strong>NetBryx</strong>, we believe great innovation starts with a simple idea — yours. With a
+                passionate team of developers, designers, and tech experts, we transform your concepts into high-impact
+                digital solutions. From game development to AI, web, and mobile apps, we bring your vision to life with precision
+                and creativity.
+                <br><br>
+                <strong>Your Ideas, Our Expertise — that's the NetBryx way.</strong>
+            </p>
+        </div>
     </div>
     <footer style="background-color: #111; color: #fff; padding: 60px 40px; font-family: 'Segoe UI', sans-serif;">
         <div
@@ -282,12 +349,28 @@
         function toggleMenu() {
             document.getElementById("navLinks").classList.toggle("active");
         }
-        const about = document.querySelector('.about-content');
-        if (about && about.getBoundingClientRect().top < window.innerHeight - 100) {
-            about.style.opacity = '1';
-            about.style.transform = 'translateY(0)';
+
+        // Animate about section on scroll
+        function animateOnScroll() {
+            const about = document.querySelector('.about-content');
+            if (about && about.getBoundingClientRect().top < window.innerHeight - 100) {
+                about.classList.add('visible');
+                window.removeEventListener('scroll', animateOnScroll);
+            }
         }
 
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Check on page load
+
+        // Prevent error on footer form
+        function subscribe(event) {
+            event.preventDefault();
+            const msg = document.getElementById('subscribe-msg');
+            if (msg) {
+                msg.style.display = 'block';
+                setTimeout(() => (msg.style.display = 'none'), 3000);
+            }
+        }
     </script>
 </body>
 
