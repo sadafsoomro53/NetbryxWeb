@@ -2,388 +2,207 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Your Ideas, Our Expertise</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            padding: 0%;
-            margin: 0%;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            height: 100px;
-            padding: 0 40px;
-            border-bottom: 2px solid rgba(230, 0, 0, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .logo {
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: white;
-        }
-
-        .logo img {
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo img:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 35px;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 500;
-            padding: 12px 24px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(230, 0, 0, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .nav-links a:hover::before {
-            left: 100%;
-        }
-
-        .nav-links a:hover {
-            color: #ff3c3c;
-            background: rgba(230, 0, 0, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(230, 0, 0, 0.2);
-        }
-
-        .nav-links .cta-button {
-            background: linear-gradient(45deg, #e60000, #ff3c3c);
-            color: white;
-            font-weight: 600;
-            border-radius: 25px;
-            padding: 12px 30px;
-            box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
-        }
-
-        .nav-links .cta-button:hover {
-            background: linear-gradient(45deg, #ff3c3c, #e60000);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .menu-toggle:hover {
-            color: #e60000;
-            background: rgba(230, 0, 0, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                background-color: #121212;
-                flex-direction: column;
-                width: 100%;
-                text-align: right;
-                padding: 20px 40px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        /* Project Card Hover Effects */
-        .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(230, 0, 0, 0.3);
-            border-color: #e60000;
-        }
-
-        .project-card:hover > div:first-child {
-            opacity: 1 !important;
-        }
-
-        /* Mobile Responsive Adjustments */
-        @media (max-width: 480px) {
-            .project-card {
-                padding: 20px !important;
-            }
-
-            .project-card h3 {
-                font-size: 1.3rem !important;
-            }
-
-            .project-card p {
-                font-size: 0.9rem !important;
-            }
-        }
-
-        body {
-            background-color: #0f0f0f;
-            color: white;
-        }
-    </style>
-    <link rel="icon" href="logo-color (2).png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Ideas, Our Expertise</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/logo-color.png">
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
-<body style="margin:0; color:white; scroll-behavior:smooth; position:relative;">
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            <img src="logo-color (2).png" alt="NetBryx Logo" height="70" width="90">
-            <p>Your</p>
-            <p>Ideas,</p>
-            <p>Our</p>
-            <p>Expertise</p>
-        </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-            <li><a href="#" class="cta-button">Get Started</a></li>
-        </ul>
-    </nav>
+<body style="background: linear-gradient(to bottom, #000000, #e60000);">
+  <!-- NAVBAR WILL BE LOADED HERE BY JAVASCRIPT -->
 
-    <!-- Projects Section -->
-    <section id="projects" style="padding:80px 20px; background: rgba(0,0,0,0.3); backdrop-filter: blur(10px);">
-        <div style="text-align:center; margin-bottom:60px;">
-            <h2 style="font-size:3rem; background: linear-gradient(45deg, #ffffff, #e60000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; margin-bottom:20px;">💼 Our Projects</h2>
-            <div style="width:100px; height:4px; background: linear-gradient(45deg, #e60000, #ff3c3c); margin:0 auto; border-radius:2px;"></div>
-            <p style="color:#ccc; font-size:1.1rem; margin-top:20px; max-width:600px; margin-left:auto; margin-right:auto;">Discover our innovative solutions that transform ideas into reality</p>
-        </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:30px; max-width:1200px; margin:auto; padding:20px;">
+  <!-- PORTFOLIO PROJECTS -->
+  <section style="padding: 80px 40px; background: linear-gradient(to bottom, #000000, #e60000);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="color: #ffffff; margin-bottom: 20px; font-size: 2.5rem;">Featured Projects</h2>
+        <p style="color: #ffffff; font-size: 1.2rem; opacity: 0.9;">Showcasing our expertise across different technologies and industries</p>
+      </div>
 
-            <a href="libro.html" style="text-decoration: none;">
-                <div class="project-card" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); padding:30px; border-radius:15px; cursor:pointer; color: white; border:1px solid rgba(230,0,0,0.2); transition: all 0.3s ease; position:relative; overflow:hidden;">
-                    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(230,0,0,0.1), transparent); opacity:0; transition:opacity 0.3s ease;"></div>
-                    <div style="position:relative; z-index:2;">
-                        <div style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
-                            <div style="width:60px; height:60px; background: linear-gradient(45deg, #e60000, #ff3c3c); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px;">🛒</div>
-                            <div>
-                                <h3 style="color: #ffffff; font-size:1.5rem; margin:0; font-weight:600;">Libro</h3>
-                                <span style="background:#e60000; color:white; padding:4px 12px; border-radius:15px; font-size:0.8rem; font-weight:500;">AI-Powered</span>
-                            </div>
-                        </div>
-                        <p style="color:#ddd; line-height:1.6; margin-bottom:20px;">Libro is an AI-powered bookstore app that allows users to buy, sell, exchange, and read books online while connecting them with physical vendors.</p>
-                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;">
-                            <span style="background:rgba(230,0,0,0.2); color:#ff3c3c; padding:4px 10px; border-radius:10px; font-size:0.8rem;">React Native</span>
-                            <span style="background:rgba(230,0,0,0.2); color:#ff3c3c; padding:4px 10px; border-radius:10px; font-size:0.8rem;">AI/ML</span>
-                            <span style="background:rgba(230,0,0,0.2); color:#ff3c3c; padding:4px 10px; border-radius:10px; font-size:0.8rem;">E-commerce</span>
-                        </div>
-                        <div style="text-align:right;">
-                            <span style="color:#e60000; font-weight:600; font-size:0.9rem;">View Project →</span>
-                        </div>
-                    </div>
-                </div>
+      <!-- PROJECT GRID -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 60px;">
+        
+        <!-- Project 1: E-commerce Platform -->
+        <div class="project-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 0; overflow: hidden; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
+          <div style="position: relative; height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="E-commerce Platform" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(230,0,0,0.8), rgba(255,60,60,0.6)); opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">React.js</div>
+          </div>
+          <div style="padding: 30px;">
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">E-commerce Platform</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">A full-stack e-commerce solution with React frontend, Node.js backend, and MongoDB database. Features include user authentication, payment integration, and admin dashboard.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">React</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Node.js</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">MongoDB</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Stripe</span>
+            </div>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; color: #e60000; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.color='#ff3c3c'; this.style.transform='translateX(5px)'" onmouseout="this.style.color='#e60000'; this.style.transform='translateX(0)'">
+              <span>View Project</span>
+              <i class="fas fa-external-link-alt" style="font-size: 12px;"></i>
             </a>
-
-            <a href="game.html" style="text-decoration: none;">
-                <div class="project-card" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); padding:30px; border-radius:15px; cursor:pointer; color: white; border:1px solid rgba(230,0,0,0.2); transition: all 0.3s ease; position:relative; overflow:hidden;">
-                    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(230,0,0,0.1), transparent); opacity:0; transition:opacity 0.3s ease;"></div>
-                    <div style="position:relative; z-index:2;">
-                        <div style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
-                            <div style="width:60px; height:60px; background: linear-gradient(45deg, #e60000, #ff3c3c); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px;">🌐</div>
-                            <div>
-                                <h3 style="color: #ffffff; font-size:1.5rem; margin:0; font-weight:600;">Portfolio Site</h3>
-                                <span style="background:#e60000; color:white; padding:4px 12px; border-radius:15px; font-size:0.8rem; font-weight:500;">Web Design</span>
-                            </div>
-                        </div>
-                        <p style="color:#ddd; line-height:1.6; margin-bottom:20px;">Modern, responsive portfolio website showcasing our expertise in web development and design.</p>
-                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;">
-                            <span style="background:rgba(230,0,0,0.2); color:#ff3c3c; padding:4px 10px; border-radius:10px; font-size:0.8rem;">HTML</span>
-                            <span style="background:rgba(230,0,0,0.2); color:#ff3c3c; padding:4px 10px; border-radius:10px; font-size:0.8rem;">CSS</span>
-                            <span style="background:rgba(230,0,0,0.2); color:#ff3c3c; padding:4px 10px; border-radius:10px; font-size:0.8rem;">Bootstrap</span>
-                        </div>
-                        <div style="text-align:right;">
-                            <span style="color:#e60000; font-weight:600; font-size:0.9rem;">View Project →</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="libro.html" style="text-decoration: none;">
-                <div class="project-card" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); padding:30px; border-radius:15px; cursor:pointer; color: white; border:1px solid rgba(230,0,0,0.2); transition: all 0.3s ease; position:relative; overflow:hidden;">
-                    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(230,0,0,0.1), transparent); opacity:0; transition:opacity 0.3s ease;"></div>
-                    <div style="position:relative; z-index:2;">
-                        <div style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
-                            <div style="width:60px; height:60px; background: linear-gradient(45deg, #e60000, #ff3c3c); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px;">📊</div>
-                            <div>
-                                <h3 style="color: #ffffff; font-size:1.5rem; margin:0; font-weight:600;">Data Dashboard</h3>
-                                <span style="background:#e60000; color:white; padding:4px 12px; border-radius:15px; font-size:0.8rem; font-weight:500;">Analytics</span>
-                            </div>
-                        </div>
-                        <p style="color:#ddd; line-height:1.6; margin-bottom:20px;">Interactive data visualization dashboard with real-time analytics and comprehensive reporting features.</p>
-                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;">
-                            <span style="background:rgba(230,0,0,0.2); color:#ff3c3c; padding:4px 10px; border-radius:10px; font-size:0.8rem;">JavaScript</span>
-                            <span style="background:rgba(230,0,0,0.2); color:#ff3c3c; padding:4px 10px; border-radius:10px; font-size:0.8rem;">Chart.js</span>
-                            <span style="background:rgba(230,0,0,0.2); color:#ff3c3c; padding:4px 10px; border-radius:10px; font-size:0.8rem;">API</span>
-                        </div>
-                        <div style="text-align:right;">
-                            <span style="color:#e60000; font-weight:600; font-size:0.9rem;">View Project →</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Modal -->
-    <div id="modal"
-        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); color:white; justify-content:center; align-items:center; z-index:999;">
-        <div
-            style="background:#222; padding:30px; border-radius:10px; max-width:500px; position:relative; text-align:center;">
-            <button onclick="closeModal()"
-                style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px; cursor:pointer;">X</button>
-            <img id="modalImage" src="" alt="" style="max-width:100%; border-radius:8px; margin-bottom:15px;">
-            <h1 id="modalTitle" style="margin-bottom:10px;"></h1>
-            <p id="modalContent"></p>
+        <!-- Project 2: Mobile App -->
+        <div class="project-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 0; overflow: hidden; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
+          <div style="position: relative; height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mobile App" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(230,0,0,0.8), rgba(255,60,60,0.6)); opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">React Native</div>
+          </div>
+          <div style="padding: 30px;">
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Fitness Tracker App</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">A cross-platform mobile application for fitness tracking with real-time data sync, workout plans, and social features. Built with React Native and Firebase.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">React Native</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Firebase</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Redux</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Maps API</span>
+            </div>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; color: #e60000; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.color='#ff3c3c'; this.style.transform='translateX(5px)'" onmouseout="this.style.color='#e60000'; this.style.transform='translateX(0)'">
+              <span>View Project</span>
+              <i class="fas fa-external-link-alt" style="font-size: 12px;"></i>
+            </a>
+          </div>
         </div>
+
+        <!-- Project 3: AI Chatbot -->
+        <div class="project-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 0; overflow: hidden; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
+          <div style="position: relative; height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI Chatbot" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(230,0,0,0.8), rgba(255,60,60,0.6)); opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">AI/ML</div>
+          </div>
+          <div style="padding: 30px;">
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">AI Customer Support Bot</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">An intelligent chatbot powered by machine learning that handles customer queries, provides instant responses, and escalates complex issues to human agents.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Python</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">TensorFlow</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">NLP</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">API</span>
+            </div>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; color: #e60000; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.color='#ff3c3c'; this.style.transform='translateX(5px)'" onmouseout="this.style.color='#e60000'; this.style.transform='translateX(0)'">
+              <span>View Project</span>
+              <i class="fas fa-external-link-alt" style="font-size: 12px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Game Development -->
+        <div class="project-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 0; overflow: hidden; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
+          <div style="position: relative; height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1556438064-2d7646166914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Game Development" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(230,0,0,0.8), rgba(255,60,60,0.6)); opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Unity</div>
+          </div>
+          <div style="padding: 30px;">
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">3D Adventure Game</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">An immersive 3D adventure game with stunning graphics, multiplayer support, and engaging storyline. Built with Unity engine and C# scripting.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Unity</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">C#</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">3D Modeling</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Multiplayer</span>
+            </div>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; color: #e60000; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.color='#ff3c3c'; this.style.transform='translateX(5px)'" onmouseout="this.style.color='#e60000'; this.style.transform='translateX(0)'">
+              <span>View Project</span>
+              <i class="fas fa-external-link-alt" style="font-size: 12px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5: Data Analytics Dashboard -->
+        <div class="project-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 0; overflow: hidden; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
+          <div style="position: relative; height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Data Analytics" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(230,0,0,0.8), rgba(255,60,60,0.6)); opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Power BI</div>
+          </div>
+          <div style="padding: 30px;">
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Business Intelligence Dashboard</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">A comprehensive data analytics platform with interactive dashboards, real-time reporting, and predictive analytics for business decision making.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Power BI</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Python</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">SQL</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Tableau</span>
+            </div>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; color: #e60000; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.color='#ff3c3c'; this.style.transform='translateX(5px)'" onmouseout="this.style.color='#e60000'; this.style.transform='translateX(0)'">
+              <span>View Project</span>
+              <i class="fas fa-external-link-alt" style="font-size: 12px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6: Cloud Infrastructure -->
+        <div class="project-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 0; overflow: hidden; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
+          <div style="position: relative; height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cloud Solutions" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(230,0,0,0.8), rgba(255,60,60,0.6)); opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">AWS</div>
+          </div>
+          <div style="padding: 30px;">
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Scalable Cloud Infrastructure</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">A robust cloud infrastructure setup with auto-scaling, load balancing, and disaster recovery. Built on AWS with Docker containerization and CI/CD pipelines.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">AWS</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Docker</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Kubernetes</span>
+              <span style="background: rgba(230,0,0,0.2); color: #e60000; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600;">Terraform</span>
+            </div>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; color: #e60000; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.color='#ff3c3c'; this.style.transform='translateX(5px)'" onmouseout="this.style.color='#e60000'; this.style.transform='translateX(0)'">
+              <span>View Project</span>
+              <i class="fas fa-external-link-alt" style="font-size: 12px;"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- STATS SECTION -->
+      <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 50px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 60px;">
+        <h2 style="color: #ffffff; text-align: center; margin-bottom: 40px; font-size: 2rem;">Our Success Metrics</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+          <div style="text-align: center;">
+            <div style="color: #e60000; font-size: 3rem; font-weight: bold; margin-bottom: 10px;">50+</div>
+            <div style="color: #ffffff; font-size: 1.2rem;">Projects Completed</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="color: #e60000; font-size: 3rem; font-weight: bold; margin-bottom: 10px;">30+</div>
+            <div style="color: #ffffff; font-size: 1.2rem;">Happy Clients</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="color: #e60000; font-size: 3rem; font-weight: bold; margin-bottom: 10px;">5+</div>
+            <div style="color: #ffffff; font-size: 1.2rem;">Years Experience</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="color: #e60000; font-size: 3rem; font-weight: bold; margin-bottom: 10px;">99%</div>
+            <div style="color: #ffffff; font-size: 1.2rem;">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA SECTION -->
+      <div style="text-align: center; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 50px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <h2 style="color: #ffffff; margin-bottom: 20px; font-size: 2rem;">Ready to Start Your Project?</h2>
+        <p style="color: #ffffff; margin-bottom: 30px; font-size: 1.2rem; opacity: 0.9;">Let's discuss how we can bring your ideas to life with cutting-edge technology.</p>
+        <a href="contact.html" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #e60000, #ff3c3c); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(230,0,0,0.3);" onmouseover="this.style.background='linear-gradient(135deg, #ff3c3c, #e60000)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(230,0,0,0.4)'" onmouseout="this.style.background='linear-gradient(135deg, #e60000, #ff3c3c)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(230,0,0,0.3)'">
+          <span>Get Started Today</span>
+          <i class="fas fa-arrow-right" style="font-size: 14px; transition: transform 0.3s ease;"></i>
+        </a>
+      </div>
     </div>
+  </section>
 
-    <!-- Footer (Updated) -->
-    <footer style="background-color: #111; color: #fff; padding: 60px 40px; font-family: 'Segoe UI', sans-serif;">
-        <div
-            style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px;">
-
-            <!-- Branding -->
-            <div style="flex: 1 1 300px;">
-                <h2 style="color: #e60000; font-size: 28px; margin-bottom: 10px;">Your Ideas, Our Expertise.</h2>
-                <p style="color: #ccc;">Empowering businesses with next-gen technology. We innovate. We deliver. We
-                    grow—together.</p>
-                <div style="margin-top: 20px;">
-                    <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
-                        style="color:#fff; margin-right: 15px;"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-
-            <!-- Links -->
-            <div style="flex: 1 1 150px;">
-                <h4 style="margin-bottom: 15px;">Quick Links</h4>
-                <ul style="list-style: none; padding: 0; line-height: 2;">
-+                  <li><a href="index.html" style="color: #ccc; text-decoration: none;">Home</a></li>
-                    <li><a href="about.html" style="color: #ccc; text-decoration: none;">About</a></li>
-                    <li><a href="services.html" style="color: #ccc; text-decoration: none;">Services</a></li>
-                    <li><a href="portfolio.html" style="color: #ccc; text-decoration: none;">Projects</a></li>
-                    <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Info -->
-            <div style="flex: 1 1 250px;">
-                <h4 style="margin-bottom: 15px;">Contact</h4>
-                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-envelope" style="color:#e60000;"></i>
-                    netbryx@gmail.com</p>
-                <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
-                    style="text-decoration: none; color:  #ccc;">
-                    <p style="color: #ccc; margin: 8px 0;"><i class="fab fa-linkedin" style="color:#e60000;"></i>
-                        https://pk.linkedin.com/company/netbryx</p>
-                </a>
-                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-phone" style="color:#e60000;"></i>
-                    +92-3172442900</p>
-                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-map-marker-alt" style="color:#e60000;"></i>
-                    Pakistan.</p>
-            </div>
-
-            <!-- Newsletter -->
-            <div style="flex: 1 1 250px;">
-                <h4 style="margin-bottom: 15px;">Newsletter</h4>
-                <form onsubmit="subscribe(event)">
-                    <input type="email" placeholder="Your email" required
-                        style="padding:10px; width:100%; border-radius:5px; border:none; margin-bottom:10px;">
-                    <button type="submit"
-                        style="background-color: #e60000; border: none; color: white; padding: 10px 20px; border-radius: 5px; width:100%;">
-                        Subscribe
-                    </button>
-                </form>
-                <p id="subscribe-msg" style="color:lightgreen; display:none; margin-top:10px;">Subscribed successfully!</p>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 50px; color: #666;">
-            &copy; 2025 NetBryx. All rights reserved.
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
-        }
-
-        function openModal(title, content, imgSrc) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalContent').innerText = content;
-            document.getElementById('modalImage').src = imgSrc;
-            document.getElementById('modal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-
-        function subscribe(event) {
-            event.preventDefault();
-            document.getElementById("subscribe-msg").style.display = "block";
-            setTimeout(() => {
-                document.getElementById("subscribe-msg").style.display = "none";
-            }, 3000);
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- FOOTER WILL BE LOADED HERE BY JAVASCRIPT -->
+  <script src="script.js"></script>
 </body>
 
 </html>

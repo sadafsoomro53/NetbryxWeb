@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetBryx Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #111;
+            color: white;
+        }
+        .debug-section {
+            background: #222;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #e60000;
+        }
+        .error { border-left-color: #ff4444; }
+        .success { border-left-color: #4ade80; }
+        .warning { border-left-color: #ffaa00; }
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 NetBryx Debug Console</h1>
+    
+    <div class="debug-section">
+        <h3>📁 File Status</h3>
+        <div id="file-status">Checking files...</div>
+    </div>
+
+    <div class="debug-section">
+        <h3>🌐 Server Status</h3>
+        <div id="server-status">Checking server...</div>
+    </div>
+
+    <div class="debug-section">
+        <h3>🔗 Navigation Links</h3>
+        <div id="nav-status">Checking navigation...</div>
+    </div>
+
+    <div class="debug-section">
+        <h3>📝 JavaScript Errors</h3>
+        <div id="js-errors">No errors detected</div>
+    </div>
+
+    <div class="debug-section">
+        <h3>🎯 Quick Actions</h3>
+        <button onclick="testMainSite()" style="background: #e60000; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">Test Main Site</button>
+        <button onclick="clearCache()" style="background: #ffaa00; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">Clear Cache</button>
+        <button onclick="reloadPage()" style="background: #4ade80; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">Reload Page</button>
+    </div>
+
+    <script>
+        // Capture JavaScript errors
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            document.getElementById('js-errors').innerHTML = 
+                `<div class="error">❌ Error: ${msg}<br>File: ${url}<br>Line: ${lineNo}</div>`;
+            return false;
+        };
+
+        // Check file status
+        async function checkFiles() {
+            const files = ['index.html', 'script.js', 'styles.css', 'navbar.html', 'footer.html'];
+            const status = document.getElementById('file-status');
+            let results = '';
+
+            for (const file of files) {
+                try {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        results += `<div class="success">✅ ${file} - OK</div>`;
+                    } else {
+                        results += `<div class="error">❌ ${file} - Error ${response.status}</div>`;
+                    }
+                } catch (e) {
+                    results += `<div class="error">❌ ${file} - Network Error</div>`;
+                }
+            }
+            status.innerHTML = results;
+        }
+
+        // Check server status
+        async function checkServer() {
+            const status = document.getElementById('server-status');
+            try {
+                const response = await fetch('/');
+                if (response.ok) {
+                    status.innerHTML = '<div class="success">✅ Server is running and accessible</div>';
+                } else {
+                    status.innerHTML = `<div class="error">❌ Server error: ${response.status}</div>`;
+                }
+            } catch (e) {
+                status.innerHTML = `<div class="error">❌ Server not accessible: ${e.message}</div>`;
+            }
+        }
+
+        // Check navigation
+        function checkNavigation() {
+            const status = document.getElementById('nav-status');
+            const links = document.querySelectorAll('a[href]');
+            let results = '';
+
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.endsWith('.html')) {
+                    results += `<div class="success">✅ Link: ${href}</div>`;
+                }
+            });
+
+            if (results === '') {
+                results = '<div class="warning">⚠️ No HTML links found</div>';
+            }
+            status.innerHTML = results;
+        }
+
+        // Test main site
+        function testMainSite() {
+            window.open('/index.html', '_blank');
+        }
+
+        // Clear cache
+        function clearCache() {
+            if ('caches' in window) {
+                caches.keys().then(names => {
+                    names.forEach(name => {
+                        caches.delete(name);
+                    });
+                });
+            }
+            localStorage.clear();
+            sessionStorage.clear();
+            alert('Cache cleared! Please refresh the page.');
+        }
+
+        // Reload page
+        function reloadPage() {
+            window.location.reload(true);
+        }
+
+        // Run all checks
+        document.addEventListener('DOMContentLoaded', function() {
+            checkFiles();
+            checkServer();
+            checkNavigation();
+        });
+
+        // Log current URL
+        console.log('Current URL:', window.location.href);
+        console.log('Current pathname:', window.location.pathname);
+    </script>
+</body>
+</html>
+

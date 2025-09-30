@@ -5,333 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your Ideas, Our Expertise</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      background-color: #0f0f0f;
-      color: white;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      height: 100px;
-      padding: 0 40px;
-      border-bottom: 2px solid rgba(230, 0, 0, 0.3);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .logo {
-      font-size: 16px;
-      font-weight: bold;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: white;
-    }
-
-    .logo img {
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .logo img:hover {
-      transform: scale(1.05);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 35px;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: 500;
-      padding: 12px 24px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .nav-links a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(230, 0, 0, 0.2), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .nav-links a:hover::before {
-      left: 100%;
-    }
-
-    .nav-links a:hover {
-      color: #ff3c3c;
-      background: rgba(230, 0, 0, 0.1);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(230, 0, 0, 0.2);
-    }
-
-    .nav-links .cta-button {
-      background: linear-gradient(45deg, #e60000, #ff3c3c);
-      color: white;
-      font-weight: 600;
-      border-radius: 25px;
-      padding: 12px 30px;
-      box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
-    }
-
-    .nav-links .cta-button:hover {
-      background: linear-gradient(45deg, #ff3c3c, #e60000);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .menu-toggle:hover {
-      color: #e60000;
-      background: rgba(230, 0, 0, 0.1);
-    }
-
-    /* --- Cards & Forms (animations kept) --- */
-    .service-card,
-    .project-card,
-    .testimonial-card,
-    .contact-form {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease;
-    }
-
-    .service-card:hover {
-      transform: scale(1.08);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-      border: 2px solid rgba(0, 0, 0, 0.8);
-      border-radius: 12px;
-      cursor: pointer;
-      backdrop-filter: blur(2px);
-    }
-
-    .service-card.visible,
-    .project-card.visible,
-    .testimonial-card.visible,
-    .contact-form.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .service-card,
-    .project-card,
-    .testimonial-card {
-      flex: 1 1 250px;
-      background: #000000;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      min-width: 250px;
-    }
-
-    .service-card h3,
-    .project-card h3,
-    .testimonial-card h4 {
-      color: #e60000;
-    }
-
-    .service-card p,
-    .project-card p,
-    .testimonial-card p {
-      color: #ffffff;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      width: 100%;
-    }
-
-    .contact-form button {
-      padding: 15px;
-      background-color: #e60000;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .contact-form button:hover {
-      background-color: #cc0000;
-    }
-
-    .responsive-section {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    #services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    /* --- Typographic scaling for smaller screens --- */
-    h1 {
-      font-size: clamp(28px, 5vw, 48px);
-    }
-
-    h2 {
-      font-size: clamp(22px, 3.2vw, 36px);
-    }
-
-    p {
-      font-size: clamp(14px, 2.2vw, 18px);
-      line-height: 1.6;
-    }
-
-    /* --- Make images fluid by default --- */
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* --- Mobile / Tablet fixes --- */
-    @media (max-width: 992px) {
-      /* Any inline-flex sections collapse to column */
-      .responsive-section,
-      section[style*="display: flex;"] {
-        flex-direction: column !important;
-        padding: 0 !important;
-        gap: 0 !important;
-      }
-
-      /* Fix the hero's left column extra padding-right from inline styles */
-      section:first-of-type>div:first-child>section {
-        padding: 40px 20px !important;
-      }
-
-      /* Ensure hero image fits nicely */
-      section:first-of-type>div:last-child img {
-        width: 100% !important;
-        height: auto !important;
-        border-bottom-left-radius: 0 !important;
-        border-bottom-right-radius: 0 !important;
-        opacity: 0.9 !important;
-      }
-
-      /* Full width child blocks inside sections */
-      section>div {
-        width: 100% !important;
-      }
-
-      /* Nav: show burger, slideout menu */
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 90px;
-        right: 0;
-        background-color: #121212;
-        flex-direction: column;
-        width: 100%;
-        text-align: right;
-        padding: 20px 40px;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .nav-links.active {
-        display: flex;
-        animation: fadeIn 0.25s ease-in-out;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-8px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    }
-
-    @media (max-width: 576px) {
-      section:first-of-type>div:first-child>section {
-        padding: 28px 16px !important;
-      }
-
-      nav {
-        height: 70px;
-        padding: 0 14px;
-      }
-
-      .nav-links {
-        top: 70px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link rel="icon" href="logo-color (2).png">
+  <link rel="icon" href="img/logo-color.png">
 </head>
 
 <body>
-  <nav>
-    <div class="logo">
-      <img src="logo-color (2).png" alt="NetBryx Logo" height="70" width="90">
-      <p>Your</p>
-      <p>Ideas,</p>
-      <p>Our</p>
-      <p>Expertise</p>
-    </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="about.html">About us</a></li>
-      <li><a href="contact.html">Contact us</a></li>
-      <li><a href="button.html" class="cta-button">Get Started</a></li>
-    </ul>
-  </nav>
+  <!-- NAVBAR WILL BE LOADED HERE BY JAVASCRIPT -->
 
   <!-- HERO (kept same; responsiveness handled by CSS overrides) -->
   <section style="display: flex;">
@@ -352,8 +32,8 @@
       </section>
     </div>
     <div style=" background: linear-gradient(to bottom, #000000, #e60000);"><img
-        src="WhatsApp Image 2025-07-22 at 12.44.22 AM.jpeg" height="527px" width="800px" alt=""
-        style="opacity: 60%; border-bottom-left-radius: 30%; border-bottom-right-radius: 30%;"></div>
+        src="https://my-media.apjonlinecdn.com/magefan_blog/2yuvwyym.png" alt=""
+        style="max-width: 100%; height: auto; opacity: 60%; border-bottom-left-radius: 30%; border-bottom-right-radius: 30%;"></div>
   </section>
 
   <section id="about"
@@ -362,18 +42,18 @@
       style="max-width: 1100px; margin: auto; text-align: center; opacity: 0; transform: translateY(50px); transition: all 0.8s ease;">
       <h2 style="color: #ffffff; margin-bottom: 20px;">Who We Are</h2>
       <p style="color: #ffffff; max-width: 800px; margin: 0 auto;">
-        At <strong>**NetBryx**</strong>, we believe great innovation starts with a simple idea — yours. With a
+        At <strong>NetBryx</strong>, we believe great innovation starts with a simple idea — yours. With a
         passionate team of developers, designers, and tech experts, we transform your concepts into high-impact digital
         solutions. From game development to AI, web, and mobile apps, we bring your vision to life with precision and
         creativity.
-        <strong>**Your Ideas, Our Expertise — that’s the NetBryx way.**</strong>
+        <strong>Your Ideas, Our Expertise — that’s the NetBryx way.</strong>
       </p>
     </div>
   </section>
 
   <section
     style="padding: 80px 40px; background-color: #fff; font-family: sans-serif;  background: linear-gradient(to bottom, #000000, #e60000);">
-    <div style="max-width: 1100px; margin: auto; text-align: center;">
+    <div style="max-width: 1100px; margin: auto; text-align: center; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); border-radius: 15px; padding: 40px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
       <h2 style="color: #ffffff; margin-bottom: 10px;">Our Services</h2>
       <p style="color: #ffffff; margin-bottom: 40px;">
         We provide innovative IT services tailored to your business needs.
@@ -382,198 +62,114 @@
       <div id="services">
         <div class="service-card">
           <a href="webdev.html" style="text-decoration: none;">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Web Development" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSIyMDAiIHZpZXdCb3g9IjAgMCAxMDAwIDIwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjBmMGYwIi8+Cjx0ZXh0IHg9IjUwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5XZWIgRGV2ZWxvcG1lbnQ8L3RleHQ+Cjwvc3ZnPg=='">
+            </div>
             <h3>Web Development</h3>
             <p>Develop responsive websites and admin panels using modern tech like React and Rust.</p>
           </a>
         </div>
         <div class="service-card">
           <a href="gamedev.html" style="text-decoration: none;">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1556438064-2d7646166914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Game Development" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
             <h3>Game Development</h3>
             <p>Create immersive 2D, 3D, and multiplayer games using Unity and cutting-edge tools.</p>
           </a>
         </div>
         <div class="service-card">
           <a href="AiMl.html" style="text-decoration: none;">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI & Machine Learning" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
             <h3>AI & Machine Learning</h3>
             <p>Build intelligent systems like recommendation engines, chatbots, and vision models.</p>
           </a>
         </div>
         <div class="service-card">
           <a href="UiUx.html" style="text-decoration: none;">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="UI/UX Design" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
             <h3>UI/UX & Graphic Design</h3>
             <p>Craft engaging user interfaces, branding assets, and interactive app/game designs.</p>
           </a>
         </div>
         <div class="service-card">
           <a href="mobile.html" style="text-decoration: none;">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mobile Development" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
             <h3>Mobile Apps Development</h3>
             <p>Design cross-platform mobile apps with seamless UI and Firebase backend integration.</p>
           </a>
         </div>
         <div class="service-card">
           <a href="cloud.html" style="text-decoration: none;">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cloud Solutions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
             <h3>Cloud Solutions</h3>
             <p>Set up and manage cloud services with Firebase, AWS, or Azure for scalability.</p>
           </a>
         </div>
         <div class="service-card">
           <a href="data.html" style="text-decoration: none;">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Data Analytics" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
             <h3>Data Analytics & BI</h3>
             <p>Analyze data and visualize insights using tools like Power BI and Python.</p>
           </a>
         </div>
         <div class="service-card">
           <a href="webscrap.html" style="text-decoration: none;">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Web Scraping & Automation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
             <h3>Web Scraping & Automation</h3>
             <p>Automate data collection and repetitive tasks with custom scraping and bot solutions.</p>
           </a>
         </div>
+      </div>
+      
+      <!-- View All Services Button -->
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="services.html" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #e60000, #ff3c3c); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(230,0,0,0.3);" onmouseover="this.style.background='linear-gradient(135deg, #ff3c3c, #e60000)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(230,0,0,0.4)'" onmouseout="this.style.background='linear-gradient(135deg, #e60000, #ff3c3c)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(230,0,0,0.3)'">
+          <span>View All Services</span>
+          <i class="fas fa-arrow-right" style="font-size: 14px; transition: transform 0.3s ease;"></i>
+        </a>
       </div>
     </div>
   </section>
 
   <section id="contact"
     style="padding: 80px 40px; background-color: #f7f7f7; font-family: sans-serif;  background: linear-gradient(to top, #000000, #e60000);">
-    <div style="max-width: 700px; margin: auto; text-align: center;">
+    <div style="max-width: 700px; margin: auto; text-align: center; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border-radius: 15px; padding: 40px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
       <h2 style="color: #ffffff; margin-bottom: 30px;">Get in Touch</h2>
-      <form id="contactForm" class="contact-form" style="padding-top: 2%;">
-        <div><input type="text" placeholder="Your Name" style="padding-top: 2%;" required></div><br>
-        <div><input type="email" placeholder="Your Email" style="padding-top: 2%;" required></div><br>
-        <div><textarea placeholder="Your Message" rows="5" required></textarea></div> <br><br>
-        <button type="submit">Send Message</button>
+      <form id="contactForm" class="contact-form">
+        <div style="position: relative; margin-bottom: 20px;">
+          <i class="fas fa-user" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #e60000;"></i>
+          <input type="text" placeholder="Your Name" style="padding-left: 45px; background: rgba(255,255,255,0.1); border: 1px solid rgba(230,0,0,0.5); color: white; transition: all 0.3s ease;" required>
+        </div>
+        <div style="position: relative; margin-bottom: 20px;">
+          <i class="fas fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #e60000;"></i>
+          <input type="email" placeholder="Your Email" style="padding-left: 45px; background: rgba(255,255,255,0.1); border: 1px solid rgba(230,0,0,0.5); color: white; transition: all 0.3s ease;" required>
+        </div>
+        <div style="position: relative; margin-bottom: 20px;">
+          <i class="fas fa-comment" style="position: absolute; left: 15px; top: 15px; color: #e60000;"></i>
+          <textarea placeholder="Your Message" rows="5" style="padding-left: 45px; background: rgba(255,255,255,0.1); border: 1px solid rgba(230,0,0,0.5); color: white; transition: all 0.3s ease;" required></textarea>
+        </div>
+        <button type="submit" style="background: linear-gradient(45deg, #e60000, #ff3c3c); border: none; color: white; padding: 15px 30px; border-radius: 25px; font-size: 16px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(230,0,0,0.3);">Send Message</button>
       </form>
       <p id="formMsg" style="margin-top:15px; color: white; display:none;">Thank you! We'll get back to you soon.</p>
     </div>
   </section>
 
-  <footer style="background-color: #111; color: #fff; padding: 60px 40px; font-family: 'Segoe UI', sans-serif;">
-    <div
-      style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px;">
+  <!-- FOOTER WILL BE LOADED HERE BY JAVASCRIPT -->
 
-      <!-- Branding -->
-      <div style="flex: 1 1 300px;">
-        <h2 style="color: #e60000; font-size: 28px; margin-bottom: 10px;">Your Ideas, Our Expertise.</h2>
-        <p style="color: #ccc;">Empowering businesses with next-gen technology. We innovate. We deliver. We
-          grow—together.</p>
-        <div style="margin-top: 20px;">
-          <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
-            style="color:#fff; margin-right: 15px;"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
-          <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <!-- Links -->
-      <div style="flex: 1 1 150px;">
-        <h4 style="margin-bottom: 15px;">Quick Links</h4>
-        <ul style="list-style: none; padding: 0; line-height: 2;">
-          <li><a href="index.html" style="color: #ccc; text-decoration: none;">Home</a></a></li>
-          <li><a href="about.html" style="color: #ccc; text-decoration: none;">About</a></li>
-          <li><a href="services.html" style="color: #ccc; text-decoration: none;">Services</a></li>
-          <li><a href="portfolio.html" style="color: #ccc; text-decoration: none;">Projects</a></li>
-          <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div style="flex: 1 1 250px;">
-        <h4 style="margin-bottom: 15px;">Contact</h4>
-        <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-envelope" style="color:#e60000;"></i> netbryx@gmail.com
-        </p>
-        <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
-          style="text-decoration: none; color:  #ccc;">
-          <p style="color: #ccc; margin: 8px 0;"><i class="fab fa-linkedin" style="color:#e60000;"></i>
-            https://pk.linkedin.com/company
-            <br>/netbryx?trk=public_jobs_top<br>card-org-name
-          </p>
-        </a>
-        <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-phone" style="color:#e60000;"></i> +92-3172442900</p>
-        <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-map-marker-alt" style="color:#e60000;"></i> Pakistan.
-        </p>
-      </div>
-      <!-- Newsletter -->
-      <div style="flex: 1 1 250px;">
-        <h4 style="margin-bottom: 15px;">Newsletter</h4>
-        <form onsubmit="subscribe(event)">
-          <input type="email" placeholder="Your email" required
-            style="padding:10px; width:100%; border-radius:5px; border:none; margin-bottom:10px;">
-          <button type="submit"
-            style="background-color: #e60000; border: none; color: white; padding: 10px 20px; border-radius: 5px; width:100%;">
-            Subscribe
-          </button>
-        </form>
-        <p id="subscribe-msg" style="color:lightgreen; display:none; margin-top:10px;">Subscribed successfully!</p>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 50px; color: #666;">
-      &copy; 2025 NetBryx. All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-
-    // Close mobile menu after clicking a link (better UX)
-    document.querySelectorAll('#navLinks a').forEach(a => {
-      a.addEventListener('click', () => {
-        document.getElementById('navLinks').classList.remove('active');
-      });
-    });
-
-    function handleScrollAnimations(selector) {
-      document.querySelectorAll(selector).forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-          el.classList.add('visible');
-        }
-      });
-    }
-
-    // Run once on load (so above-the-fold items are visible)
-    window.addEventListener('load', () => {
-      handleScrollAnimations('.service-card');
-      handleScrollAnimations('.project-card');
-      handleScrollAnimations('.testimonial-card');
-      handleScrollAnimations('.contact-form');
-
-      const about = document.querySelector('.about-content');
-      if (about && about.getBoundingClientRect().top < window.innerHeight - 100) {
-        about.style.opacity = '1';
-        about.style.transform = 'translateY(0)';
-      }
-    });
-
-    window.addEventListener('scroll', () => {
-      handleScrollAnimations('.service-card');
-      handleScrollAnimations('.project-card');
-      handleScrollAnimations('.testimonial-card');
-      handleScrollAnimations('.contact-form');
-
-      const about = document.querySelector('.about-content');
-      if (about && about.getBoundingClientRect().top < window.innerHeight - 100) {
-        about.style.opacity = '1';
-        about.style.transform = 'translateY(0)';
-      }
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      document.getElementById('formMsg').style.display = 'block';
-      this.reset();
-    });
-
-    // Prevent error on footer form
-    function subscribe(event) {
-      event.preventDefault();
-      const msg = document.getElementById('subscribe-msg');
-      if (msg) {
-        msg.style.display = 'block';
-        setTimeout(() => (msg.style.display = 'none'), 3000);
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>

@@ -5,484 +5,181 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Ideas, Our Expertise</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/logo-color.png">
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<style>
-  * {
-    padding: 0%;
-    margin: 0%;
-    font-family: 'Segoe UI', sans-serif;
-  }
 
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    height: 100px;
-    padding: 0 40px;
-    border-bottom: 2px solid rgba(230, 0, 0, 0.3);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  }
+<body style="background: linear-gradient(to bottom, #000000, #e60000);">
+  <!-- NAVBAR WILL BE LOADED HERE BY JAVASCRIPT -->
 
-  .logo {
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: white;
-  }
 
-  .logo img {
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
+  <!-- SERVICES SECTION -->
+  <section style="padding: 80px 40px; background: linear-gradient(to bottom, #000000, #e60000);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="color: #ffffff; margin-bottom: 20px; font-size: 2.5rem;">What We Offer</h2>
+        <p style="color: #ffffff; font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">From web development to AI solutions, we provide end-to-end technology services to help your business thrive in the digital world.</p>
+      </div>
 
-  .logo img:hover {
-    transform: scale(1.05);
-  }
+      <!-- WHAT WE OFFER SECTION -->
+      <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 50px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 60px;">
+        <div id="services" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+          <div class="service-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onclick="window.location.href='webdev.html'">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Web Development" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSIyMDAiIHZpZXdCb3g9IjAgMCAxMDAwIDIwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjBmMGYwIi8+Cjx0ZXh0IHg9IjUwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5XZWIgRGV2ZWxvcG1lbnQ8L3RleHQ+Cjwvc3ZnPg=='">
+            </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Web Development</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">Develop responsive websites and admin panels using modern tech like React and Rust.</p>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(230,0,0,0.8); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Click to View</div>
+          </div>
+          <div class="service-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onclick="window.location.href='gamedev.html'">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1556438064-2d7646166914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Game Development" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Game Development</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">Create immersive 2D, 3D, and multiplayer games using Unity and cutting-edge tools.</p>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(230,0,0,0.8); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Click to View</div>
+          </div>
+          <div class="service-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onclick="window.location.href='AiMl.html'">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI & Machine Learning" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">AI & Machine Learning</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">Build intelligent systems like recommendation engines, chatbots, and vision models.</p>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(230,0,0,0.8); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Click to View</div>
+          </div>
+          <div class="service-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onclick="window.location.href='UiUx.html'">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="UI/UX Design" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">UI/UX & Graphic Design</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">Craft engaging user interfaces, branding assets, and interactive app/game designs.</p>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(230,0,0,0.8); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Click to View</div>
+          </div>
+          <div class="service-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onclick="window.location.href='mobile.html'">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mobile Development" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Mobile Apps Development</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">Design cross-platform mobile apps with seamless UI and Firebase backend integration.</p>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(230,0,0,0.8); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Click to View</div>
+          </div>
+          <div class="service-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onclick="window.location.href='cloud.html'">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cloud Solutions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Cloud Solutions</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">Set up and manage cloud services with Firebase, AWS, or Azure for scalability.</p>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(230,0,0,0.8); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Click to View</div>
+          </div>
+          <div class="service-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onclick="window.location.href='data.html'">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Data Analytics" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+            </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Data Analytics & BI</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">Analyze data and visualize insights using tools like Power BI and Python.</p>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(230,0,0,0.8); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Click to View</div>
+          </div>
+          <div class="service-card" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onclick="window.location.href='webscrap.html'">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Web Scraping & Automation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+        </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Web Scraping & Automation</h3>
+            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 20px;">Automate data collection and repetitive tasks with custom scraping and bot solutions.</p>
+            <div style="position: absolute; top: 20px; right: 20px; background: rgba(230,0,0,0.8); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">Click to View</div>
+      </div>
+        </div>
+      </div>
 
-  .nav-links {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-    align-items: center;
-  }
+      <!-- OUR PROCESS SECTION -->
+      <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 50px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 60px;">
+        <h2 style="color: #ffffff; text-align: center; margin-bottom: 40px; font-size: 2rem;">Our Process</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+          <div style="text-align: center;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 25px rgba(230,0,0,0.4);">
+              <i class="fas fa-comments" style="color: white; font-size: 30px;"></i>
+            </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.3rem;">1. Consultation</h3>
+            <p style="color: #ffffff; line-height: 1.6;">We discuss your requirements and understand your business goals</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 25px rgba(230,0,0,0.4);">
+              <i class="fas fa-lightbulb" style="color: white; font-size: 30px;"></i>
+            </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.3rem;">2. Planning</h3>
+            <p style="color: #ffffff; line-height: 1.6;">We create a detailed project plan and timeline</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 25px rgba(230,0,0,0.4);">
+              <i class="fas fa-code" style="color: white; font-size: 30px;"></i>
+        </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.3rem;">3. Development</h3>
+            <p style="color: #ffffff; line-height: 1.6;">We build your solution using modern technologies</p>
+      </div>
+          <div style="text-align: center;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 25px rgba(230,0,0,0.4);">
+              <i class="fas fa-rocket" style="color: white; font-size: 30px;"></i>
+        </div>
+            <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.3rem;">4. Launch</h3>
+            <p style="color: #ffffff; line-height: 1.6;">We deploy and launch your project successfully</p>
+      </div>
+        </div>
+      </div>
 
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    padding: 12px 24px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .nav-links a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(230, 0, 0, 0.2), transparent);
-    transition: left 0.5s ease;
-  }
-
-  .nav-links a:hover::before {
-    left: 100%;
-  }
-
-  .nav-links a:hover {
-    color: #ff3c3c;
-    background: rgba(230, 0, 0, 0.1);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.2);
-  }
-
-  .nav-links .cta-button {
-    background: linear-gradient(45deg, #e60000, #ff3c3c);
-    color: white;
-    font-weight: 600;
-    border-radius: 25px;
-    padding: 12px 30px;
-    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
-  }
-
-  .nav-links .cta-button:hover {
-    background: linear-gradient(45deg, #ff3c3c, #e60000);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
-  }
-
-  .menu-toggle {
-    display: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
-
-  .menu-toggle:hover {
-    color: #e60000;
-    background: rgba(230, 0, 0, 0.1);
-  }
-
-  @media (max-width: 992px) {
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 100px;
-      right: 0;
-      background-color: #121212;
-      flex-direction: column;
-      width: 100%;
-      text-align: right;
-      padding: 20px 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .nav-links.active {
-      display: flex;
-      animation: fadeIn 0.25s ease-in-out;
-    }
-
-    .menu-toggle {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-8px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    nav {
-      height: 80px;
-      padding: 0 20px;
-    }
-
-    .nav-links {
-      top: 80px;
-    }
-  }
-
-  .service-card {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s ease;
-    flex: 1 1 280px;
-    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    border: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
-    margin: 15px;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(230, 0, 0, 0.1), transparent);
-    transition: left 0.5s ease;
-  }
-
-  .service-card:hover::before {
-    left: 100%;
-  }
-
-  .service-card .service-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, #e60000, #ff3c3c);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: white;
-    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
-
-  .service-card:hover .service-icon {
-    transform: scale(1.1) rotate(5deg);
-  }
-
-  .service-card h3 {
-    color: #ffffff;
-    font-size: 22px;
-    margin-bottom: 15px;
-    font-weight: 600;
-  }
-
-  .service-card p {
-    color: #ccc;
-    line-height: 1.6;
-    font-size: 15px;
-  }
-
-  .service-card .service-features {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(230, 0, 0, 0.2);
-  }
-
-  .service-card .service-features ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .service-card .service-features li {
-    color: #999;
-    font-size: 13px;
-    margin-bottom: 5px;
-    padding-left: 20px;
-    position: relative;
-  }
-
-  .service-card .service-features li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #e60000;
-    font-weight: bold;
-  }
-
-  .service-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .service-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(230, 0, 0, 0.2);
-    border-color: #e60000;
-    background: linear-gradient(135deg, #2a2a2a, #3a2a2a);
-  }
-
-  body {
-    background-color: #0f0f0f;
-    color: white;
-  }
-</style>
-<link rel="icon" href="logo-color (2).png">
-
-<body>
-  <!-- Header -->
-  <nav>
-    <div class="logo">
-      <img src="logo-color (2).png" alt="NetBryx Logo" height="70" width="90">
-      <p>Your</p>
-      <p>Ideas,</p>
-      <p>Our</p>
-      <p>Expertise</p>
+      <!-- TECHNOLOGIES WE USE SECTION -->
+      <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 50px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 60px;">
+        <h2 style="color: #ffffff; text-align: center; margin-bottom: 40px; font-size: 2rem;">Technologies We Use</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px;">
+          <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(230,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.transform='translateY(0)'">
+            <i class="fab fa-react" style="color: #e60000; font-size: 40px; margin-bottom: 15px;"></i>
+            <h4 style="color: #ffffff; margin-bottom: 10px;">React.js</h4>
+            <p style="color: #ffffff; opacity: 0.8; font-size: 14px;">Frontend Development</p>
+        </div>
+          <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(230,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.transform='translateY(0)'">
+            <i class="fab fa-node-js" style="color: #e60000; font-size: 40px; margin-bottom: 15px;"></i>
+            <h4 style="color: #ffffff; margin-bottom: 10px;">Node.js</h4>
+            <p style="color: #ffffff; opacity: 0.8; font-size: 14px;">Backend Development</p>
+      </div>
+          <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(230,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.transform='translateY(0)'">
+            <i class="fab fa-python" style="color: #e60000; font-size: 40px; margin-bottom: 15px;"></i>
+            <h4 style="color: #ffffff; margin-bottom: 10px;">Python</h4>
+            <p style="color: #ffffff; opacity: 0.8; font-size: 14px;">AI & Data Science</p>
+        </div>
+          <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(230,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.transform='translateY(0)'">
+            <i class="fab fa-aws" style="color: #e60000; font-size: 40px; margin-bottom: 15px;"></i>
+            <h4 style="color: #ffffff; margin-bottom: 10px;">AWS</h4>
+            <p style="color: #ffffff; opacity: 0.8; font-size: 14px;">Cloud Services</p>
+      </div>
+          <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(230,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.transform='translateY(0)'">
+            <i class="fas fa-database" style="color: #e60000; font-size: 40px; margin-bottom: 15px;"></i>
+            <h4 style="color: #ffffff; margin-bottom: 10px;">MongoDB</h4>
+            <p style="color: #ffffff; opacity: 0.8; font-size: 14px;">Database</p>
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="about.html">About us</a></li>
-      <li><a href="contact.html">Contact us</a></li>
-      <li><a href="button.html" class="cta-button">Get Started</a></li>
-    </ul>
-  </nav>
-  <div style="max-width: 1100px; margin: auto; text-align: center; padding-top: 10%;">
-    <h2 style="font-size: 36px; color: #ffffff; margin-bottom: 10px;">Our Services</h2>
-    <p style="font-size: 18px; color: #ffffff; margin-bottom: 40px;">
-      We provide innovative IT services tailored to your business needs.
-    </p>
-    <div id="services"
-      style="padding-bottom: 5%; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px;">
-      <div class="service-card">
-        <div class="service-icon">🌐</div>
-        <h3>Web Development</h3>
-        <p>Develop responsive websites and admin panels using modern tech like React and Rust.</p>
-        <div class="service-features">
-          <ul>
-            <li>Responsive Design</li>
-            <li>Modern Frameworks</li>
-            <li>Admin Panels</li>
-          </ul>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎮</div>
-        <h3>Game Development</h3>
-        <p>Create immersive 2D, 3D, and multiplayer games using Unity and cutting-edge tools.</p>
-        <div class="service-features">
-          <ul>
-            <li>2D/3D Games</li>
-            <li>Unity Development</li>
-            <li>Multiplayer Support</li>
-          </ul>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🤖</div>
-        <h3>AI & Machine Learning</h3>
-        <p>Build intelligent systems like recommendation engines, chatbots, and vision models.</p>
-        <div class="service-features">
-          <ul>
-            <li>Chatbots</li>
-            <li>Vision Models</li>
-            <li>Data Analysis</li>
-          </ul>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎨</div>
-        <h3>UI/UX & Graphic Design</h3>
-        <p>Craft engaging user interfaces, branding assets, and interactive app/game designs.</p>
-        <div class="service-features">
-          <ul>
-            <li>User Interfaces</li>
-            <li>Branding Assets</li>
-            <li>Interactive Design</li>
-          </ul>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">📱</div>
-        <h3>Mobile Apps Development</h3>
-        <p>Design cross-platform mobile apps with seamless UI and Firebase backend integration.</p>
-        <div class="service-features">
-          <ul>
-            <li>Cross-platform</li>
-            <li>Firebase Backend</li>
-            <li>Seamless UI</li>
-          </ul>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">☁️</div>
-        <h3>Cloud Solutions</h3>
-        <p>Set up and manage cloud services with Firebase, AWS, or Azure for scalability.</p>
-        <div class="service-features">
-          <ul>
-            <li>AWS/Azure Setup</li>
-            <li>Scalable Solutions</li>
-            <li>Cloud Management</li>
-          </ul>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">📊</div>
-        <h3>Data Analytics & BI</h3>
-        <p>Analyze data and visualize insights using tools like Power BI and Python.</p>
-        <div class="service-features">
-          <ul>
-            <li>Power BI</li>
-            <li>Python Analytics</li>
-            <li>Data Visualization</li>
-          </ul>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🔧</div>
-        <h3>Web Scraping & Automation</h3>
-        <p>Automate data collection and repetitive tasks with custom scraping and bot solutions.</p>
-        <div class="service-features">
-          <ul>
-            <li>Data Collection</li>
-            <li>Task Automation</li>
-            <li>Custom Bots</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+          <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(230,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.transform='translateY(0)'">
+            <i class="fas fa-mobile-alt" style="color: #e60000; font-size: 40px; margin-bottom: 15px;"></i>
+            <h4 style="color: #ffffff; margin-bottom: 10px;">React Native</h4>
+            <p style="color: #ffffff; opacity: 0.8; font-size: 14px;">Mobile Development</p>
   </div>
-
-
-  <footer style="background-color: #111; color: #fff; padding: 60px 40px; font-family: 'Segoe UI', sans-serif;">
-    <div
-      style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px;">
-      <!-- Branding -->
-      <div style="flex: 1 1 300px;">
-        <h2 style="color: #e60000; font-size: 28px; margin-bottom: 10px;">Your Ideas, Our Expertise.</h2>
-        <p style="color: #ccc;">Empowering businesses with next-gen technology. We innovate. We deliver. We
-          grow—together.</p>
-        <div style="margin-top: 20px;">
-          <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
-            style="color:#fff; margin-right: 15px;"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
-          <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
-      <!-- Links -->
-      <div style="flex: 1 1 150px;">
-        <h4 style="margin-bottom: 15px;">Quick Links</h4>
-        <ul style="list-style: none; padding: 0; line-height: 2;">
-          <li><a href="index.html" style="color: #ccc; text-decoration: none;">Home</a></li>
-          <li><a href="about.html" style="color: #ccc; text-decoration: none;">About</a></li>
-          <li><a href="services.html" style="color: #ccc; text-decoration: none;">Services</a></li>
-          <li><a href="portfolio.html" style="color: #ccc; text-decoration: none;">Projects</a></li>
-          <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div style="flex: 1 1 250px;">
-        <h4 style="margin-bottom: 15px;">Contact</h4>
-        <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-envelope" style="color:#e60000;"></i>
-          netbryx@gmail.com
-        </p>
-        <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
-          style="text-decoration: none; color:  #ccc;">
-          <p style="color: #ccc; margin: 8px 0;"><i class="fab fa-linkedin" style="color:#e60000;"></i>
-            https://pk.linkedin.com/company
-            <br>/netbryx?trk=public_jobs_top<br>card-org-name
-          </p>
+      <!-- READY TO GET STARTED SECTION -->
+      <div style="text-align: center; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 50px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <h2 style="color: #ffffff; margin-bottom: 20px; font-size: 2rem;">Ready to Get Started?</h2>
+        <p style="color: #ffffff; margin-bottom: 30px; font-size: 1.2rem; opacity: 0.9;">Let's discuss your project and bring your ideas to life with cutting-edge technology.</p>
+        <a href="contact.html" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #e60000, #ff3c3c); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(230,0,0,0.3);" onmouseover="this.style.background='linear-gradient(135deg, #ff3c3c, #e60000)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(230,0,0,0.4)'" onmouseout="this.style.background='linear-gradient(135deg, #e60000, #ff3c3c)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(230,0,0,0.3)'">
+          <span>Get Started Today</span>
+          <i class="fas fa-arrow-right" style="font-size: 14px; transition: transform 0.3s ease;"></i>
         </a>
-        <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-phone" style="color:#e60000;"></i>
-          +92-3172442900</p>
-        <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-map-marker-alt" style="color:#e60000;"></i>
-          Pakistan.
-        </p>
-      </div>
-      <!-- Newsletter -->
-      <div style="flex: 1 1 250px;">
-        <h4 style="margin-bottom: 15px;">Newsletter</h4>
-        <form onsubmit="subscribe(event)">
-          <input type="email" placeholder="Your email" required
-            style="padding:10px; width:100%; border-radius:5px; border:none; margin-bottom:10px;">
-          <button type="submit"
-            style="background-color: #e60000; border: none; color: white; padding: 10px 20px; border-radius: 5px; width:100%;">
-            Subscribe
-          </button>
-        </form>
-        <p id="subscribe-msg" style="color:lightgreen; display:none; margin-top:10px;">Subscribed successfully!
-        </p>
-      </div>
     </div>
 
-    <div style="text-align: center; margin-top: 50px; color: #666;">
-      &copy; 2025 NetBryx. All rights reserved.
     </div>
-  </footer>
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-    function handleScrollAnimations(selector) {
-      document.querySelectorAll(selector).forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-          el.classList.add('visible');
-        }
-      });
-    }
+  </section>
 
-    window.addEventListener('scroll', () => {
-      handleScrollAnimations('.service-card');
-    });
-  </script>
+  <!-- FOOTER WILL BE LOADED HERE BY JAVASCRIPT -->
+  <script src="script.js"></script>
 </body>
 
 </html>

@@ -2,408 +2,198 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Ideas, Our Expertise</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - NetBryx</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/logo-color.png">
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<style>
-    * {
-        padding: 0%;
-        margin: 0%;
-        font-family: 'Segoe UI', sans-serif;
-    }
 
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        height: 100px;
-        padding: 0 40px;
-        border-bottom: 2px solid rgba(230, 0, 0, 0.3);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    }
+<body style="background: linear-gradient(to bottom, #000000, #e60000);">
+  <!-- NAVBAR WILL BE LOADED HERE BY JAVASCRIPT -->
 
-    .logo {
-        font-size: 16px;
-        font-weight: bold;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: white;
-    }
+  <!-- HERO SECTION -->
+  <section id="about">
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <p>Ready to bring your ideas to life? Let's discuss your project and create something amazing together.</p>
+    </div>
+  </section>
 
-    .logo img {
-        border-radius: 8px;
-        transition: transform 0.3s ease;
-    }
-
-    .logo img:hover {
-        transform: scale(1.05);
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 35px;
-        list-style: none;
-        align-items: center;
-    }
-
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-        font-size: 17px;
-        font-weight: 500;
-        padding: 12px 24px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .nav-links a::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(230, 0, 0, 0.2), transparent);
-        transition: left 0.5s ease;
-    }
-
-    .nav-links a:hover::before {
-        left: 100%;
-    }
-
-    .nav-links a:hover {
-        color: #ff3c3c;
-        background: rgba(230, 0, 0, 0.1);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(230, 0, 0, 0.2);
-    }
-
-    .nav-links .cta-button {
-        background: linear-gradient(45deg, #e60000, #ff3c3c);
-        color: white;
-        font-weight: 600;
-        border-radius: 25px;
-        padding: 12px 30px;
-        box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
-    }
-
-    .nav-links .cta-button:hover {
-        background: linear-gradient(45deg, #ff3c3c, #e60000);
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
-    }
-
-    .menu-toggle {
-        display: none;
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-    }
-
-    .menu-toggle:hover {
-        color: #e60000;
-        background: rgba(230, 0, 0, 0.1);
-    }
-
-    @media (max-width: 992px) {
-        .nav-links {
-            display: none;
-            position: absolute;
-            top: 100px;
-            right: 0;
-            background-color: #121212;
-            flex-direction: column;
-            width: 100%;
-            text-align: right;
-            padding: 20px 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .nav-links.active {
-            display: flex;
-            animation: fadeIn 0.25s ease-in-out;
-        }
-
-        .menu-toggle {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-8px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    }
-
-    @media (max-width: 576px) {
-        nav {
-            height: 80px;
-            padding: 0 20px;
-        }
-
-        .nav-links {
-            top: 80px;
-        }
-    }
-
-    body {
-        background-color: #0f0f0f;
-        color: white;
-    }
-
-    /* Contact Form Styling */
-    .contact-form-container {
-        background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(230, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .contact-form-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(230, 0, 0, 0.1), transparent);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .contact-form-container:hover::before {
-        opacity: 1;
-    }
-
-    .contact-form-container:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(230, 0, 0, 0.2);
-        border-color: #e60000;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        background: rgba(255, 255, 255, 0.05);
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 15px 20px;
-        color: white;
-        font-size: 16px;
-        transition: all 0.3s ease;
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-        outline: none;
-        border-color: #e60000;
-        background: rgba(255, 255, 255, 0.08);
-        box-shadow: 0 0 15px rgba(230, 0, 0, 0.2);
-    }
-
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-        color: rgba(255, 255, 255, 0.6);
-    }
-
-    .contact-form button {
-        background: linear-gradient(45deg, #e60000, #ff3c3c);
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: 15px 40px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
-        width: 100%;
-    }
-
-    .contact-form button:hover {
-        background: linear-gradient(45deg, #ff3c3c, #e60000);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
-    }
-
-    .contact-form textarea {
-        resize: vertical;
-        min-height: 120px;
-    }
-
-    .form-message {
-        background: rgba(0, 255, 0, 0.1);
-        color: #4ade80;
-        padding: 15px;
-        border-radius: 10px;
-        margin-top: 20px;
-        border: 1px solid rgba(0, 255, 0, 0.3);
-        display: none;
-    }
-</style>
-<link rel="icon" href="logo-color (2).png">
-
-<body>
-    <!-- Header -->
-    <nav>
-        <div class="logo">
-            <img src="logo-color (2).png" alt="NetBryx Logo" height="70" width="90">
-            <p>Your</p>
-            <p>Ideas,</p>
-            <p>Our</p>
-            <p>Expertise</p>
-        </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-            <li><a href="button.html" class="cta-button">Get Started</a></li>
-        </ul>
-    </nav>
-    <!-- Contact Section -->
-    <section id="contact" style="padding:80px 20px; text-align:center;">
-        <div style="text-align:center; margin-bottom:60px;">
-            <h2 style="font-size:3rem; background: linear-gradient(45deg, #ffffff, #e60000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; margin-bottom:20px;">📧 Contact Us</h2>
-            <div style="width:100px; height:4px; background: linear-gradient(45deg, #e60000, #ff3c3c); margin:0 auto; border-radius:2px;"></div>
-            <p style="color:#ccc; font-size:1.1rem; margin-top:20px; max-width:600px; margin-left:auto; margin-right:auto;">Get in touch with us to discuss your next project</p>
+  <!-- CONTACT SECTION -->
+  <section style="padding: 80px 40px; background: linear-gradient(to bottom, #000000, #e60000);">
+    <div class="container">
+      
+      <!-- CONTACT INFO CARDS -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px;">
+        
+        <!-- Email Card -->
+        <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 8px 25px rgba(230,0,0,0.4);">
+            <i class="fas fa-envelope" style="color: white; font-size: 30px;"></i>
+          </div>
+          <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Email Us</h3>
+          <p style="color: #ffffff; margin-bottom: 20px; line-height: 1.6;">Send us an email and we'll respond within 24 hours</p>
+          <a href="mailto:netbryx@gmail.com" style="color: #e60000; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.color='#ff3c3c'; this.style.transform='scale(1.05)'" onmouseout="this.style.color='#e60000'; this.style.transform='scale(1)'">netbryx@gmail.com</a>
         </div>
 
-        <div class="contact-form-container" style="max-width:600px; margin:auto;">
-            <form class="contact-form" onsubmit="return sendForm()">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div class="form-message" id="formMsg">Thank you! We'll get back to you soon.</div>
+        <!-- Phone Card -->
+        <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 8px 25px rgba(230,0,0,0.4);">
+            <i class="fas fa-phone-alt" style="color: white; font-size: 30px;"></i>
+          </div>
+          <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Call Us</h3>
+          <p style="color: #ffffff; margin-bottom: 20px; line-height: 1.6;">Speak directly with our team for immediate assistance</p>
+          <a href="tel:+923172442900" style="color: #e60000; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.color='#ff3c3c'; this.style.transform='scale(1.05)'" onmouseout="this.style.color='#e60000'; this.style.transform='scale(1)'">+92-3172442900</a>
         </div>
-    </section>
-    <footer style="background-color: #111; color: #fff; padding: 60px 40px; font-family: 'Segoe UI', sans-serif;">
-        <div
-            style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px;">
 
-            <!-- Branding -->
-            <div style="flex: 1 1 300px;">
-                <h2 style="color: #e60000; font-size: 28px; margin-bottom: 10px;">Your Ideas, Our Expertise.</h2>
-                <p style="color: #ccc;">Empowering businesses with next-gen technology. We innovate. We deliver. We
-                    grow—together.</p>
-                <div style="margin-top: 20px;">
-                    <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
-                        style="color:#fff; margin-right: 15px;"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" style="color:#fff; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+        <!-- Location Card -->
+        <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(230,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 8px 25px rgba(230,0,0,0.4);">
+            <i class="fas fa-map-marker-alt" style="color: white; font-size: 30px;"></i>
+          </div>
+          <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.5rem;">Visit Us</h3>
+          <p style="color: #ffffff; margin-bottom: 20px; line-height: 1.6;">We're based in Pakistan, serving clients worldwide</p>
+          <span style="color: #e60000; font-weight: 600; font-size: 1.1rem;">Pakistan</span>
+        </div>
+
+      </div>
+
+      <!-- MAIN CONTACT FORM -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+        
+        <!-- Contact Form -->
+        <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 50px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+          <h2 style="color: #ffffff; margin-bottom: 30px; font-size: 2rem; text-align: center;">Send Us a Message</h2>
+          <form id="contactForm" style="display: grid; gap: 25px;">
+            <div style="position: relative;">
+              <i class="fas fa-user" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #e60000; font-size: 18px;"></i>
+              <input type="text" placeholder="Your Full Name" required
+                style="width: 100%; padding: 18px 20px 18px 55px; background: rgba(255,255,255,0.1); border: 2px solid rgba(230,0,0,0.3); border-radius: 12px; color: white; font-size: 16px; transition: all 0.3s ease; box-sizing: border-box;"
+                onfocus="this.style.borderColor='#e60000'; this.style.background='rgba(255,255,255,0.2)'; this.style.boxShadow='0 0 20px rgba(230,0,0,0.3)'"
+                onblur="this.style.borderColor='rgba(230,0,0,0.3)'; this.style.background='rgba(255,255,255,0.1)'; this.style.boxShadow='none'">
+            </div>
+            
+            <div style="position: relative;">
+              <i class="fas fa-envelope" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #e60000; font-size: 18px;"></i>
+              <input type="email" placeholder="Your Email Address" required
+                style="width: 100%; padding: 18px 20px 18px 55px; background: rgba(255,255,255,0.1); border: 2px solid rgba(230,0,0,0.3); border-radius: 12px; color: white; font-size: 16px; transition: all 0.3s ease; box-sizing: border-box;"
+                onfocus="this.style.borderColor='#e60000'; this.style.background='rgba(255,255,255,0.2)'; this.style.boxShadow='0 0 20px rgba(230,0,0,0.3)'"
+                onblur="this.style.borderColor='rgba(230,0,0,0.3)'; this.style.background='rgba(255,255,255,0.1)'; this.style.boxShadow='none'">
+            </div>
+            
+            <div style="position: relative;">
+              <i class="fas fa-phone" style="position: absolute; left: 20px; top: 20px; color: #e60000; font-size: 18px;"></i>
+              <input type="tel" placeholder="Your Phone Number (Optional)"
+                style="width: 100%; padding: 18px 20px 18px 55px; background: rgba(255,255,255,0.1); border: 2px solid rgba(230,0,0,0.3); border-radius: 12px; color: white; font-size: 16px; transition: all 0.3s ease; box-sizing: border-box;"
+                onfocus="this.style.borderColor='#e60000'; this.style.background='rgba(255,255,255,0.2)'; this.style.boxShadow='0 0 20px rgba(230,0,0,0.3)'"
+                onblur="this.style.borderColor='rgba(230,0,0,0.3)'; this.style.background='rgba(255,255,255,0.1)'; this.style.boxShadow='none'">
+            </div>
+            
+            <div style="position: relative;">
+              <i class="fas fa-comment" style="position: absolute; left: 20px; top: 20px; color: #e60000; font-size: 18px;"></i>
+              <textarea placeholder="Tell us about your project..." rows="6" required
+                style="width: 100%; padding: 18px 20px 18px 55px; background: rgba(255,255,255,0.1); border: 2px solid rgba(230,0,0,0.3); border-radius: 12px; color: white; font-size: 16px; transition: all 0.3s ease; resize: vertical; box-sizing: border-box;"
+                onfocus="this.style.borderColor='#e60000'; this.style.background='rgba(255,255,255,0.2)'; this.style.boxShadow='0 0 20px rgba(230,0,0,0.3)'"
+                onblur="this.style.borderColor='rgba(230,0,0,0.3)'; this.style.background='rgba(255,255,255,0.1)'; this.style.boxShadow='none'"></textarea>
+            </div>
+            
+            <button type="submit" 
+              style="background: linear-gradient(135deg, #e60000, #ff3c3c); border: none; color: white; padding: 18px 40px; border-radius: 12px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(230,0,0,0.4); margin-top: 10px;"
+              onmouseover="this.style.background='linear-gradient(135deg, #ff3c3c, #e60000)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 35px rgba(230,0,0,0.5)'"
+              onmouseout="this.style.background='linear-gradient(135deg, #e60000, #ff3c3c)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(230,0,0,0.4)'">
+              <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>
+              Send Message
+            </button>
+          </form>
+          <p id="formMsg" style="margin-top: 20px; color: #4CAF50; display: none; text-align: center; font-weight: 600; font-size: 16px;">✅ Thank you! We'll get back to you within 24 hours.</p>
+        </div>
+
+        <!-- Contact Info & Image -->
+        <div style="display: flex; flex-direction: column; gap: 30px;">
+          
+          <!-- Why Choose Us -->
+          <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <h3 style="color: #e60000; margin-bottom: 25px; font-size: 1.8rem; text-align: center;">Why Choose NetBryx?</h3>
+            <div style="display: grid; gap: 20px;">
+              <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-check" style="color: white; font-size: 16px;"></i>
                 </div>
+                <span style="color: #ffffff; font-size: 16px;">Expert developers with 5+ years experience</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-check" style="color: white; font-size: 16px;"></i>
+                </div>
+                <span style="color: #ffffff; font-size: 16px;">Modern technologies & best practices</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-check" style="color: white; font-size: 16px;"></i>
+                </div>
+                <span style="color: #ffffff; font-size: 16px;">24/7 support & maintenance</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-check" style="color: white; font-size: 16px;"></i>
+                </div>
+                <span style="color: #ffffff; font-size: 16px;">Competitive pricing & flexible packages</span>
+              </div>
             </div>
+          </div>
 
-            <!-- Links -->
-            <div style="flex: 1 1 150px;">
-                <h4 style="margin-bottom: 15px;">Quick Links</h4>
-                <ul style="list-style: none; padding: 0; line-height: 2;">
-                    <li><a href="index.html" style="color: #ccc; text-decoration: none;">Home</a></a></li>
-                    <li><a href="about.html" style="color: #ccc; text-decoration: none;">About</a></li>
-                    <li><a href="services.html" style="color: #ccc; text-decoration: none;">Services</a></li>
-                    <li><a href="portfolio.html" style="color: #ccc; text-decoration: none;">Projects</a></li>
-                    <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
-                </ul>
+          <!-- Team Image -->
+          <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 0; overflow: hidden; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div style="position: relative; height: 300px; overflow: hidden;">
+              <img src="img/picture.jpg" alt="NetBryx Team" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(230,0,0,0.3), rgba(255,60,60,0.2));"></div>
+              <div style="position: absolute; bottom: 20px; left: 20px; right: 20px;">
+                <h4 style="color: white; margin-bottom: 10px; font-size: 1.3rem;">Meet Our Team</h4>
+                <p style="color: white; font-size: 14px; opacity: 0.9;">Passionate developers ready to bring your ideas to life</p>
+              </div>
             </div>
+          </div>
 
-            <!-- Contact Info -->
-            <div style="flex: 1 1 250px;">
-                <h4 style="margin-bottom: 15px;">Contact</h4>
-                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-envelope" style="color:#e60000;"></i>
-                    netbryx@gmail.com
-                </p>
-                <a href="https://pk.linkedin.com/company/netbryx?trk=public_jobs_topcard-org-name"
-                    style="text-decoration: none; color:  #ccc;">
-                    <p style="color: #ccc; margin: 8px 0;"><i class="fab fa-linkedin" style="color:#e60000;"></i>
-                        https://pk.linkedin.com/company
-                        <br>/netbryx?trk=public_jobs_top<br>card-org-name
-                    </p>
-                </a>
-                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-phone" style="color:#e60000;"></i>
-                    +92-3172442900</p>
-                <p style="color: #ccc; margin: 8px 0;"><i class="fas fa-map-marker-alt" style="color:#e60000;"></i>
-                    Pakistan.
-                </p>
-            </div>
-            <!-- Newsletter -->
-            <div style="flex: 1 1 250px;">
-                <h4 style="margin-bottom: 15px;">Newsletter</h4>
-                <form onsubmit="subscribe(event)">
-                    <input type="email" placeholder="Your email" required
-                        style="padding:10px; width:100%; border-radius:5px; border:none; margin-bottom:10px;">
-                    <button type="submit"
-                        style="background-color: #e60000; border: none; color: white; padding: 10px 20px; border-radius: 5px; width:100%;">
-                        Subscribe
-                    </button>
-                </form>
-                <p id="subscribe-msg" style="color:lightgreen; display:none; margin-top:10px;">Subscribed successfully!
-                </p>
-            </div>
         </div>
 
-        <div style="text-align: center; margin-top: 50px; color: #666;">
-            &copy; 2025 NetBryx. All rights reserved.
+      </div>
+
+      <!-- RESPONSE TIME INFO -->
+      <div style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; border: 1px solid rgba(230,0,0,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-top: 60px; text-align: center;">
+        <h3 style="color: #e60000; margin-bottom: 20px; font-size: 1.8rem;">Quick Response Guarantee</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+          <div style="text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+              <i class="fas fa-clock" style="color: white; font-size: 24px;"></i>
+            </div>
+            <h4 style="color: #ffffff; margin-bottom: 10px;">24 Hours</h4>
+            <p style="color: #ffffff; opacity: 0.8;">Email Response Time</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+              <i class="fas fa-phone" style="color: white; font-size: 24px;"></i>
+            </div>
+            <h4 style="color: #ffffff; margin-bottom: 10px;">Immediate</h4>
+            <p style="color: #ffffff; opacity: 0.8;">Phone Support</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e60000, #ff3c3c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+              <i class="fas fa-calendar-check" style="color: white; font-size: 24px;"></i>
+            </div>
+            <h4 style="color: #ffffff; margin-bottom: 10px;">Same Day</h4>
+            <p style="color: #ffffff; opacity: 0.8;">Project Consultation</p>
+          </div>
         </div>
-    </footer>
-    <script>
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
-        }
+      </div>
 
-        function sendForm() {
-            event.preventDefault();
-            const formMsg = document.getElementById('formMsg');
-            formMsg.style.display = 'block';
+    </div>
+  </section>
 
-            // Reset form
-            document.querySelector('.contact-form').reset();
-
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMsg.style.display = 'none';
-            }, 5000);
-
-            return false;
-        }
-
-        // Prevent error on footer form
-        function subscribe(event) {
-            event.preventDefault();
-            const msg = document.getElementById('subscribe-msg');
-            if (msg) {
-                msg.style.display = 'block';
-                setTimeout(() => (msg.style.display = 'none'), 3000);
-            }
-        }
-    </script>
+  <!-- FOOTER WILL BE LOADED HERE BY JAVASCRIPT -->
+  <script src="script.js"></script>
 </body>
 
 </html>
